@@ -43,10 +43,12 @@ Para contribuir a este proyecto deberas seguir las practicas de [Conventional Co
 Estructura del nombre de un commit
 
 { tipo }: { descripción }
+feat: add login page
 
 Estructura del nombre de una rama
 
 { tipo }/ { descripción }
+feat/addLoginPage
 
 > [!NOTE]
 > Nombrar todo con camelCase
