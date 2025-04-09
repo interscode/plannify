@@ -36,6 +36,21 @@ Tu aliado escolar en la palma de tu mano.
 - [ ] Mejorar el rendimiento de OCR en dispositivos Android
 - [ ] Internacionalización (i18n)
 
+# 🤝 Contribución
+
+Para contribuir a este proyecto deberas seguir las practicas de [Conventional Commits]("https://www.conventionalcommits.org/en/v1.0.0/")
+
+Estructura del nombre de un commit
+
+{ tipo }: { descripción }
+
+Estructura del nombre de una rama
+
+{ tipo }/ { descripción }
+
+> [!NOTE]
+> Nombrar todo con camelCase
+
 ## 📃 Licencia
 
 - [ ] Establecer licencia
