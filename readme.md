@@ -43,8 +43,6 @@ Tu aliado escolar en la palma de tu mano.
   Soporte para múltiples idiomas que permite adaptar la plataforma a distintos contextos y usuarios.
 
 
-- [ ] Establecer caracteristicas de la apliación
-
 ## 📁 Estructura del Proyecto
 
 - [ ] Establecer estructura del proyecto 
