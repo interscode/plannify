@@ -24,7 +24,24 @@ Tu aliado escolar en la palma de tu mano.
 
 ## 🧠 Características principales
 
-- [ ] Establecer caracteristicas de la apliación
+- **Registro de horarios de los usuarios**  
+  Ya sea mediante un escaneo o de manera manual.
+
+- **Notificaciones sobre tareas próximas a entregar**  
+  El sistema envía alertas para mantener al usuario informado sobre sus pendientes.
+
+- **Visualización de materias del día**  
+  Muestra las materias que el usuario tiene durante el día en curso, así como el porcentaje cursado de cada una.
+
+- **Gestión de tareas**  
+  Registro de tareas en progreso, tareas atrasadas y tareas finalizadas.
+
+- **Calendario mensual interactivo**  
+  Visualización completa del mes en curso, con indicadores de colores que muestran los días con tareas próximas a entregar.
+
+- **Internacionalización (i18n)**  
+  Soporte para múltiples idiomas que permite adaptar la plataforma a distintos contextos y usuarios.
+
 
 ## 📁 Estructura del Proyecto
 
