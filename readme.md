@@ -14,6 +14,8 @@ Tu aliado escolar en la palma de tu mano.
 - **BetterAuth** – Sistema de autenticación robusto y flexible.
 - **AWS Lambda** – Infraestructura sin servidor (serverless) para desplegar las funciones del backend eficientemente.
 
+[Link del repo de la API](https://github.com/interscode/plannify-api)
+
 ### 📱 Frontend
 - **React Native + Expo** – Aplicación móvil cross-platform.
 - [ ] Buscar libreria OCR para React Native – Permite escanear imágenes de horarios escolares y extraer los datos relevantes de forma automática.
