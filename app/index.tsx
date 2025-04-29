@@ -4,8 +4,8 @@ import { Text, View } from "react-native";
 export default function App() {
   verifyInstallation();
   return (
-    <View className="flex flex-1 justify-center items-center">
-      <Text className="text-red-500 text-2xl">
+    <View className="flex flex-1 items-center justify-center">
+      <Text className="text-2xl text-red-500">
         Hola, ya funciona nativewind
       </Text>
     </View>
