@@ -6,7 +6,7 @@ export default function App() {
   return (
     <View className="flex flex-1 items-center justify-center">
       <Text className="text-2xl text-red-500">
-        Hola, ya funciona nativewind
+        Hola, ya funciona nativewind.
       </Text>
     </View>
   );
