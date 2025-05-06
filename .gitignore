@@ -43,3 +43,6 @@ bun.lock
 
 # VS Code
 .vscode/
+
+# Package
+package.json
