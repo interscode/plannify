@@ -9,7 +9,7 @@ export default function App() {
       <Text className="text-2xl text-red-500">
         Hola, ya funciona nativewind
       </Text>
-      <Link href="../classes">Classes</Link>
+      <Link href="../edit-add-task">Añadir/Editar</Link>
     </View>
   );
 }

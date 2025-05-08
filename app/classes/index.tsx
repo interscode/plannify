@@ -1,7 +1,7 @@
 import AddClassButton from "@/features/classes/components/AddClassButton";
 import ClassesList from "@/features/classes/components/ClassesList";
 import EmptyClassesPlaceHolder from "@/features/classes/components/EmptyClassesPlaceHolder";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View } from "react-native";
 
 type ClassItems = {
   id: string;
