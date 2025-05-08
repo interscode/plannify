@@ -1,21 +1,14 @@
+import StandartdTextInput from "@/shared/components/StandartTextInput";
 import { View, Text, TextInput } from "react-native";
 
 const NameAndTeacher = () => {
   return (
-    <View className="mt-[100] w-[80%]">
-      <Text className="text-[18px] font-bold">Materia</Text>
-      <TextInput
-        className="mb-2 mt-2 h-[50] rounded-[10] border border-[#E0E0E0] bg-[#FAF8FB] p-3"
-        placeholderTextColor="#cacaca"
-        placeholder="Nombre de la materia"
-      />
+    <View className="mt-[100px] w-[80%]">
+      <Text className="text-xl font-bold">Materia</Text>
+      <StandartdTextInput placeholder="Título de la tarea" />
 
-      <Text className="text-[18px] font-bold">Docente</Text>
-      <TextInput
-        className="mb-2 mt-2 h-[50] rounded-[10] border border-[#E0E0E0] bg-[#FAF8FB] p-3 py-4"
-        placeholderTextColor="#cacaca"
-        placeholder="Nombre del docente"
-      />
+      <Text className="text-xl font-bold">Docente</Text>
+      <StandartdTextInput placeholder="Título de la tarea" />
     </View>
   );
 };

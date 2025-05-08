@@ -1,6 +1,6 @@
-import AddClassButton from "@/features/classes/components/AddClassButton";
 import ClassesList from "@/features/classes/components/ClassesList";
 import EmptyClassesPlaceHolder from "@/features/classes/components/EmptyClassesPlaceHolder";
+import StandardLink from "@/shared/components/StandardLink";
 import { View } from "react-native";
 
 type ClassItems = {
@@ -16,7 +16,9 @@ type ClassesProps = {
 
 export default function Classes({ ClassData }: ClassesProps) {
   // Este ClassData será eliminado en cuanto se desarrolle el funcionamiento
-  ClassData = [];
+  ClassData = [
+    /*{id: "kji121", subject: "¡Matemáticas hijo!", teacher: "Gilberto", classroom: "V0"}*/
+  ];
 
   return (
     <View className="h-full bg-[#f8f8ff]">
@@ -28,7 +30,11 @@ export default function Classes({ ClassData }: ClassesProps) {
         <EmptyClassesPlaceHolder />
       )}
 
-      <AddClassButton />
+      <StandardLink
+        href="../insert-class"
+        buttonText="Agregar Materia"
+        opaque={false}
+      />
     </View>
   );
 }

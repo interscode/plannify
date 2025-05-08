@@ -1,7 +1,7 @@
-import AddButton from "@/features/insert-class/components/AddButton";
 import Customization from "@/features/insert-class/components/Customization";
 import NameAndTeacher from "@/features/insert-class/components/NameAndTeacher";
 import SchedulePicker from "@/features/insert-class/components/ScheduleSection";
+import StandardLink from "@/shared/components/StandardLink";
 import { View } from "react-native";
 
 export default function InsertClass() {
@@ -13,7 +13,7 @@ export default function InsertClass() {
         <SchedulePicker />
       </View>
 
-      <AddButton />
+      <StandardLink href="../classes" buttonText="Añadir" opaque={true} />
     </View>
   );
 }

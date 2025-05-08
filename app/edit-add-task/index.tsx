@@ -1,7 +1,7 @@
-import AddEditButton from "@/features/edit-add-task/components/AddEditButton";
-import ClassPickerTask from "@/features/edit-add-task/components/ClassPickerTask";
+import SchedulePickerTask from "@/features/edit-add-task/components/SchedulePickerTask";
 import DescriptionAreaTask from "@/features/edit-add-task/components/DescriptionAreaTask";
 import TitleClassTask from "@/features/edit-add-task/components/TitleClassTask";
+import StandardLink from "@/shared/components/StandardLink";
 import { View } from "react-native";
 
 export default function EditAddTask() {
@@ -9,11 +9,11 @@ export default function EditAddTask() {
         <View className="flex-1 justify-between bg-[#f8f8ff] pb-6">   
             <View className="items-center">
                 <TitleClassTask/>
-                <ClassPickerTask/>
+                <SchedulePickerTask/>
                 <DescriptionAreaTask/>
             </View>
 
-            <AddEditButton/>
+            <StandardLink href="" buttonText="Listo" opaque={true} />
         </View>
     );
 }

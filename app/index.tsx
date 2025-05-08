@@ -10,6 +10,7 @@ export default function App() {
         Hola, ya funciona nativewind
       </Text>
       <Link href="../edit-add-task">Añadir/Editar</Link>
+      <Link href="../classes">Clases</Link>
     </View>
   );
 }

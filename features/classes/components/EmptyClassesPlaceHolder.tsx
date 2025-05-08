@@ -3,7 +3,7 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 const EmptyClassesPlaceHolder = () => {
   return (
     <View className="flex-1 items-center">
-      <Text className="pt-5 font-semibold text-[#C0C0C0]">
+      <Text className="pt-1 font-semibold text-[#c0c0c0]">
         Aún no has añadido materias
       </Text>
       <View className="flex-1 justify-center">
