@@ -31,7 +31,7 @@ export default function Classes({ ClassData }: ClassesProps) {
       )}
 
       <StandardLink
-        href="../insert-class"
+        href="../insert-class/InsertClass.tsx"
         buttonText="Agregar Materia"
         opaque={false}
       />
