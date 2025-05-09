@@ -1,4 +1,4 @@
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image } from "react-native";
 
 type UserCardProps = {
   name: string;
@@ -6,12 +6,16 @@ type UserCardProps = {
   imageSource: any;
 };
 
-export default function UserCard({ name, provider, imageSource }: UserCardProps) {
+export default function UserCard({
+  name,
+  provider,
+  imageSource,
+}: UserCardProps) {
   return (
-    <View className="flex-row items-center bg-white p-4 rounded-xl mb-4">
+    <View className="mb-4 flex-row items-center rounded-xl bg-white p-4">
       <Image
         source={imageSource}
-        className="w-12 h-12 rounded-full mr-4"
+        className="mr-4 h-12 w-12 rounded-full"
         resizeMode="cover"
       />
       <View>

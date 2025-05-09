@@ -19,34 +19,36 @@ export default function SettingsScreen() {
 
       {/* Opciones de Configuración */}
       <View className="shadow-xs mb-4 rounded-xl">
-        <View className="mb-4 bg-white px-3 py-2 rounded-lg">
-        <TouchableOpacity
-          className="flex-row items-center p-4"
-          onPress={() => {}}
-        >
-          <Ionicons
-            name="sunny-outline"
-            size={25}
-            color="#000"
-            className="mr-3"
-          />
-          <Text className="w-full text-base">Claro</Text>
-        </TouchableOpacity>
+        <View className="mb-4 rounded-lg bg-white px-3 py-2">
+          <TouchableOpacity
+            className="flex-row items-center p-4"
+            onPress={() => {}}
+          >
+            <Ionicons
+              name="sunny-outline"
+              size={25}
+              color="#000"
+              className="mr-3"
+            />
+            <Text className="w-full text-base">Claro</Text>
+          </TouchableOpacity>
         </View>
-        
-        <View className="bg-white px-3 py-2 rounded-lg">
-        <TouchableOpacity className="flex-row items-center p-4" onPress={() => {}}>
-          <Ionicons
-            name="moon-outline"
-            size={25}
-            color="#000"
-            className="mr-3"
-          />
-          <Text className="w-full text-base">Oscuro</Text>
-          <Text className="text-sm text-gray-500"></Text>
-        </TouchableOpacity>
+
+        <View className="rounded-lg bg-white px-3 py-2">
+          <TouchableOpacity
+            className="flex-row items-center p-4"
+            onPress={() => {}}
+          >
+            <Ionicons
+              name="moon-outline"
+              size={25}
+              color="#000"
+              className="mr-3"
+            />
+            <Text className="w-full text-base">Oscuro</Text>
+            <Text className="text-sm text-gray-500"></Text>
+          </TouchableOpacity>
         </View>
-        
       </View>
     </View>
   );

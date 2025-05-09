@@ -47,8 +47,8 @@ export default function SettingsScreen() {
         </Text>
 
         {/* Lista de dispositivos */}
-        <View className="mb-4 mt-2 gap-y-4 overflow-hidden ">
-          <TouchableOpacity className="flex-row items-center bg-white p-4 rounded-lg ">
+        <View className="mb-4 mt-2 gap-y-4 overflow-hidden">
+          <TouchableOpacity className="flex-row items-center rounded-lg bg-white p-4">
             <Ionicons
               name="log-out-outline"
               size={25}
@@ -68,7 +68,7 @@ export default function SettingsScreen() {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity className="flex-row items-center bg-white p-4 rounded-lg">
+          <TouchableOpacity className="flex-row items-center rounded-lg bg-white p-4">
             <Ionicons
               name="log-out-outline"
               size={25}

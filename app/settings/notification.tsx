@@ -22,33 +22,34 @@ export default function SettingsScreen() {
       />
 
       {/* Opciones de Configuración */}
-      <View className="shadow-xs mb-4  ">
+      <View className="shadow-xs mb-4">
         {/* Opción 1 */}
-        <View className="mb-4 bg-white px-3 py-2 rounded-lg ">
+        <View className="mb-4 rounded-lg bg-white px-3 py-2">
           <TouchableOpacity
-            className="flex-row items-center p-4 bg-white "
+            className="flex-row items-center bg-white p-4"
             onPress={() => {}}
           >
             <Ionicons name="notifications-outline" size={20} className="mr-3" />
             <View>
               <Text className="text-base">Notificaciones automatizadas</Text>
               <Text className="mr-7 text-sm text-gray-500">
-                Las notificaciones se basan en la técnica de repetición espaciada
+                Las notificaciones se basan en la técnica de repetición
+                espaciada
               </Text>
             </View>
           </TouchableOpacity>
         </View>
 
         {/* Opción 2 */}
-        <View className="shadow-xs mb-4  ">
+        <View className="shadow-xs mb-4">
           <TouchableOpacity
-            className="flex-row items-center  p-4 bg-white rounded-lg"
+            className="flex-row items-center rounded-lg bg-white p-4"
             onPress={() => {}}
           >
             <Ionicons name="notifications-outline" size={20} className="mr-3" />
             <View>
-              <Text className="text-base ">Notificaciones manuales</Text>
-              <Text className="text-sm text-gray-500 ">
+              <Text className="text-base">Notificaciones manuales</Text>
+              <Text className="text-sm text-gray-500">
                 Ingresa el intervalo deseado
               </Text>
             </View>

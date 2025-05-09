@@ -19,27 +19,27 @@ export default function SettingsScreen() {
 
       {/* Opciones de Configuración */}
       <View className="shadow-xs mb-4 rounded-xl">
-        <View className="mb-4 bg-white px-3 py-2 rounded-lg">
+        <View className="mb-4 rounded-lg bg-white px-3 py-2">
           <TouchableOpacity
-            className="flex-row items-center p-4 rounded-lg"
+            className="flex-row items-center rounded-lg p-4"
             onPress={() => {}}
           >
             <View className="w-10">
               <Text className="text-2xl">ES</Text>
             </View>
-            <Text className="text-base w-full">Español</Text>
+            <Text className="w-full text-base">Español</Text>
           </TouchableOpacity>
         </View>
 
-        <View className="bg-white px-3 py-2 rounded-lg">
+        <View className="rounded-lg bg-white px-3 py-2">
           <TouchableOpacity
-            className="flex-row items-center p-4 rounded-lg"
+            className="flex-row items-center rounded-lg p-4"
             onPress={() => {}}
           >
             <View className="w-10">
               <Text className="text-2xl">EN</Text>
             </View>
-            <Text className="text-base w-full">Inglés</Text>
+            <Text className="w-full text-base">Inglés</Text>
           </TouchableOpacity>
         </View>
       </View>
