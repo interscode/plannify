@@ -2,7 +2,7 @@ import { View, Text, TextInput, TouchableOpacity } from "react-native";
 
 const SchedulePickerTask = () => {
   return (
-    <View className="w-[80%]">
+    <View className="w-full">
       <Text className="mb-2 text-lg font-bold">Entrega</Text>
 
       <View className="mb-2 flex-row justify-between gap-x-4">

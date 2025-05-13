@@ -16,11 +16,11 @@ const ClassesList = ({ classData }: ClassesListProps) => {
   return (
     <View className="flex-1 items-center justify-between">
       <FlatList
-        className="w-[80%] pt-[50]"
+        className="w-full pt-[50]"
         data={classData}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <View className="rounded-[15px] bg-[#51B15F] pb-[14px] pl-[14px] pr-[10px] pt-[6px]">
+          <View className="rounded-[15px] bg-[#51B15F] p-[14px]">
             <View className="-mb-2 flex-row items-start justify-between">
               <View />
               <TouchableOpacity>

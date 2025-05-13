@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity, TextInput } from "react-native";
 
 const ScheduleSection = () => {
   return (
-    <View className="w-[80%]">
+    <View className="w-full">
       <Text className="mb-2 mt-2 text-xl font-bold">Horario</Text>
 
       <View>

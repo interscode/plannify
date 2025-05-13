@@ -3,7 +3,7 @@ import { View, Text, TextInput } from "react-native";
 
 const TitleClassTask = () => {
     return(
-        <View className="mt-[100] w-[80%]">
+        <View className="mt-[50] w-full">
             <Text className="text-lg font-bold">Título</Text>
             <StandartdTextInput placeholder="Título de la tarea" />
             

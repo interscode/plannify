@@ -3,7 +3,7 @@ import { View, Text, TextInput } from "react-native";
 
 const NameAndTeacher = () => {
   return (
-    <View className="mt-[100px] w-[80%]">
+    <View className="mt-[100px] w-full">
       <Text className="text-xl font-bold">Materia</Text>
       <StandartdTextInput placeholder="Título de la tarea" />
 

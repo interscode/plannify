@@ -21,7 +21,7 @@ export default function Classes({ ClassData }: ClassesProps) {
   ];
 
   return (
-    <View className="h-full bg-[#f8f8ff]">
+    <View className="h-full bg-[#f8f8ff] py-[5vh]">
       {/* <Header text={"Materias"}/> */}
 
       {ClassData.length > 0 ? (
