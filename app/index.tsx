@@ -1,10 +1,22 @@
-import { verifyInstallation } from "nativewind";
-import { Text, View } from "react-native";
+import Logo from "@/shared/components/logo";
+import {
+  IconBackpack,
+  IconBellSchool,
+  IconBooks,
+  IconChalkboard,
+  IconChecklist,
+  IconDeviceLaptop,
+  IconLogin2,
+  IconNotebook,
+  IconPencil,
+} from "@tabler/icons-react-native";
+import { Link } from "expo-router";
+import { Pressable, StatusBar, Text, View } from "react-native";
 
 export default function App() {
-  verifyInstallation();
   return (
-    <View className="flex flex-1 items-center justify-center px-8">
+    <View className="flex flex-1 items-center justify-center px-8 py-[10vh]">
+      <StatusBar backgroundColor="#f8f8ff" />
       <View className="mb-6 flex flex-col gap-5">
         <View className="flex flex-row items-center justify-between gap-5">
           <View className="-mb-10 -mr-10">
@@ -35,13 +47,19 @@ export default function App() {
         </View>
       </View>
       <Text className="mb-2 text-3xl font-bold">Plannify</Text>
-      <Text className="w-3/5 text-center text-lg ">
+      <Text className="mb-auto w-3/5 text-center text-lg">
         Tu aliado escolar en la palma de tu mano.
       </Text>
-      <Pressable className="flex h-12 w-full flex-row items-center justify-center gap-2 rounded-lg bg-primary">
-        <Text className="text-xl font-bold text-white">Comenzar</Text>
-        <IconLogin2 size={25} color="#fff" />
-      </Pressable>
+      <Link href="/auth/signup" asChild>
+        <Pressable className="mb-2 flex h-12 w-full flex-row items-center justify-center gap-2 rounded-lg bg-primary">
+          <Text className="text-xl font-bold text-white">Comenzar</Text>
+          <IconLogin2 size={25} color="#fff" />
+        </Pressable>
+      </Link>
+      <Link href="/auth/signin">
+        ¿Ya tienes cuenta?{" "}
+        <Text className="font-bold text-primary">Inicia sesión</Text>
+      </Link>
     </View>
   );
 }
