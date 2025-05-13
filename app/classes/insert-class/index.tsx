@@ -1,6 +1,6 @@
-import Customization from "@/features/insert-class/components/Customization";
-import NameAndTeacher from "@/features/insert-class/components/NameAndTeacher";
-import SchedulePicker from "@/features/insert-class/components/ScheduleSection";
+import Customization from "@/features/classes/insert-class/components/Customization";
+import NameAndTeacher from "@/features/classes/insert-class/components/NameAndTeacher";
+import SchedulePicker from "@/features/classes/insert-class/components/ScheduleSection";
 import StandardLink from "@/shared/components/StandardLink";
 import { View } from "react-native";
 
