@@ -46,10 +46,10 @@ export default function SettingsScreen() {
             className="flex-row items-center rounded-lg bg-white p-4"
             onPress={() => {}}
           >
-            <Ionicons name="notifications-outline" size={20} className="mr-3" />
+            <Ionicons name="notifications-outline" size={20} className=" ml-3" />
             <View>
-              <Text className="text-base">Notificaciones manuales</Text>
-              <Text className="text-sm text-gray-500">
+              <Text className="text-base, ml-3">Notificaciones manuales</Text>
+              <Text className="text-sm text-gray-500 ml-3 w-full">
                 Ingresa el intervalo deseado
               </Text>
             </View>

@@ -23,44 +23,62 @@ export default function SettingsScreen() {
 
       {/* Opciones de Configuración */}
       <View className="mb-4 overflow-hidden rounded-xl bg-white">
-        <TouchableOpacity
-          className="flex-row items-center border-b border-gray-100 p-4"
-          onPress={() => router.push("/settings/notification")}
-        >
-          <Ionicons
-            name="notifications-outline"
-            size={25}
-            color="#000"
-            className="mr-3"
-          />
-          <Text className="w-full text-base text-gray-800">Notificaciones</Text>
-        </TouchableOpacity>
+        <View>
+          <TouchableOpacity
+            className="flex-row items-center justify-between border-b border-gray-100 p-4"
+            onPress={() => router.push("/settings/notification")}
+          >
+            <View className="flex-row">
+              <Ionicons
+                name="notifications-outline"
+                size={25}
+                color="#000"
+                className="mr-3"
+              />
+              <Text className="w-3/4 text-base text-gray-800">
+                Notificaciones
+              </Text>
+            </View>
 
-        <TouchableOpacity
-          className="flex-row items-center border-b border-gray-100 p-4"
-          onPress={() => router.push("/settings/language")}
-        >
-          <Ionicons
-            name="language-outline"
-            size={25}
-            color="#000"
-            className="mr-3"
-          />
-          <Text className="w-full text-base text-gray-800">Idioma</Text>
-        </TouchableOpacity>
+            <Ionicons name="chevron-back" size={25} className="mr-2" />
+          </TouchableOpacity>
+        </View>
 
-        <TouchableOpacity
-          className="flex-row items-center p-4"
-          onPress={() => router.push("/settings/theme")}
-        >
-          <Ionicons
-            name="color-palette-outline"
-            size={25}
-            color="#000"
-            className="mr-3"
-          />
-          <Text className="w-full text-base text-gray-800">Tema</Text>
-        </TouchableOpacity>
+        <View>
+          <TouchableOpacity
+            className="flex-row items-center border-b border-gray-100 p-4"
+            onPress={() => router.push("/settings/language")}
+          >
+            <View className="flex-row">
+              <Ionicons
+                name="language-outline"
+                size={25}
+                color="#000"
+                className="mr-3"
+              />
+              <Text className="w-3/4 text-base text-gray-800">Idioma</Text>
+            </View>
+            <Ionicons name="chevron-back" size={25} />
+          </TouchableOpacity>
+        </View>
+
+        <View>
+          <TouchableOpacity
+            className="flex-row items-center border-b border-gray-100 p-4"
+            onPress={() => router.push("/settings/theme")}
+          >
+            <View className="flex-row">
+              <Ionicons
+                name="color-palette-outline"
+                size={25}
+                color="#000"
+                className="mr-3"
+              />
+              <Text className="w-3/4 text-base text-gray-800">Tema</Text>
+            </View>
+            <Ionicons name="chevron-back" size={25} />
+          </TouchableOpacity>
+        </View>
       </View>
 
       {/* Botón de sincronización */}
