@@ -98,6 +98,7 @@ export default function SettingsScreen() {
           </Text>
         </TouchableOpacity>
       </View>
+      
 
       {/* Botón de Cerrar Sesión */}
       <View className="mb-4 mt-2 overflow-hidden rounded-xl bg-white p-4">
