@@ -13,7 +13,7 @@ export default function InsertClass() {
         <SchedulePicker />
       </View>
 
-      <StandardLink href="../classes" buttonText="Añadir" opaque={true} />
+      <StandardLink href="" buttonText="Añadir" opaque={true} />
     </View>
   );
 }
