@@ -1,14 +1,16 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  presets: [require("nativewind/preset")], // 👈 esta línea es esencial
-  content: [
-    "./app/**/*.{js,jsx,ts,tsx}",
-    "./features/**/*.{js,jsx,ts,tsx}",
-  ],
-  theme: {
-    extend: {},
+export const content = [
+  "./app/**/*.{js,jsx,ts,tsx}",
+  "./shared/**/*.{js,jsx,ts,tsx}",
+  "./features/**/*.{js,jsx,ts,tsx}",
+];
+export const presets = [require("nativewind/preset")];
+export const theme = {
+  extend: {
+    colors: {
+      primary: "#000080",
+      light: "#f8f8ff",
+    },
   },
-  plugins: [],
-}
-
-
+};
+export const plugins = [];

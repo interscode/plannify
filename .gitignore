@@ -46,3 +46,9 @@ package-lock.json
 
 # VS Code
 .vscode/
+
+# Android
+android/
+
+# iOS
+ios/
