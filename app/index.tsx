@@ -1,3 +1,4 @@
+import { Link } from "expo-router";
 import { verifyInstallation } from "nativewind";
 import { Text, View } from "react-native";
 
@@ -8,6 +9,9 @@ export default function App() {
       <Text className="text-2xl text-red-500">
         Hola, ya funciona nativewind
       </Text>
+
+      <Link href="/settings">settings</Link>
     </View>
   );
 }
+  
