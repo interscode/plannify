@@ -35,14 +35,4 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
 
-# Bun
-bun.lock
-
-# NPM
-package-lock.json
-
-# Git
-.git/
-
-# VS Code
-.vscode/
+app-example
