@@ -7,7 +7,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   scheme: "plannify",
   version: "1.0.0",
   orientation: "portrait",
-  icon: "./assets/icon.png",
+  icon: "./assets/icon-light.png",
   userInterfaceStyle: "automatic",
   newArchEnabled: true,
   splash: {
@@ -24,6 +24,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     },
   },
   android: {
+    package: "com.interscode.plannify",
     adaptiveIcon: {
       foregroundImage: "./assets/adaptive-icon.png",
       backgroundColor: "#000080",
