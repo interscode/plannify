@@ -15,7 +15,7 @@ import { Pressable, StatusBar, Text, View } from "react-native";
 
 export default function App() {
   return (
-    <View className="flex flex-1 items-center justify-center px-8 py-[10vh]">
+    <View className="flex flex-1 items-center justify-center px-8 py-[5vh]">
       <StatusBar backgroundColor="#f8f8ff" />
       <View className="mb-6 flex flex-col gap-5">
         <View className="flex flex-row items-center justify-between gap-5">

@@ -2,12 +2,12 @@ import { ExpoConfig, ConfigContext } from "expo/config";
 
 export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
-  name: "plannify",
+  name: "Plannify",
   slug: "plannify",
   scheme: "plannify",
   version: "1.0.0",
   orientation: "portrait",
-  icon: "./assets/icon.png",
+  icon: "./assets/icon-light.png",
   userInterfaceStyle: "automatic",
   newArchEnabled: true,
   splash: {
@@ -28,6 +28,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       foregroundImage: "./assets/adaptive-icon.png",
       backgroundColor: "#000080",
     },
+    package: "com.interscode.plannify",
   },
   web: {
     favicon: "./assets/favicon.png",
