@@ -1,5 +1,4 @@
-import { Link } from "expo-router";
-import { View, Text, Pressable, ScrollView } from "react-native";
+import { View, Text, Pressable } from "react-native";
 
 export default function TaskInProgress() {
   return (
