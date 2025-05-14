@@ -15,7 +15,7 @@ type ClassesProps = {
 };
 
 export default function Classes({ ClassData }: ClassesProps) {
-  // Este ClassData será eliminado en cuanto se desarrolle el funcionamiento
+  // Este ClassData será eliminado en cuanto se termine el funcionamiento
   ClassData = [
     /*{id: "kji121", subject: "¡Matemáticas hijo!", teacher: "Gilberto", classroom: "V0"}*/
   ];
