@@ -43,3 +43,6 @@ bun.lock
 
 # VS Code
 .vscode/
+
+# Android
+./android
