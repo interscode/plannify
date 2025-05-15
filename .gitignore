@@ -50,4 +50,5 @@ package-lock.json
 # Android
 android/
 
-
+# iOS
+ios/
