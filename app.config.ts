@@ -29,7 +29,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       foregroundImage: "./assets/adaptive-icon.png",
       backgroundColor: "#000080",
     },
-    package: "com.interscode.plannify",
   },
   web: {
     favicon: "./assets/favicon.png",
