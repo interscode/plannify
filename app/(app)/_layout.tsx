@@ -22,7 +22,7 @@ export default function AppLayout() {
             layout={layout}
           />
         ),
-        sceneStyle: { backgroundColor: "#f8f8ff", paddingHorizontal: 25 },
+        sceneStyle: { backgroundColor: "#f8f8ff" },
       }}
     >
       <Tabs.Screen
@@ -38,7 +38,7 @@ export default function AppLayout() {
         }}
       />
       <Tabs.Screen
-        name="calendar/index"
+        name="calendar"
         options={{
           title: "Calendar",
           tabBarIcon: ({ color, focused }) => (
@@ -46,10 +46,10 @@ export default function AppLayout() {
           ),
         }}
       />
-      {/* <Tabs.Screen
+      <Tabs.Screen
         name="tasks"
         options={{
-          title: "Tasks",
+          title: "Tareas",
           tabBarIcon: ({ color }) => (
             <IconSquareRoundedCheck size={28} color={color} />
           ),
@@ -58,10 +58,10 @@ export default function AppLayout() {
       <Tabs.Screen
         name="settings"
         options={{
-          title: "Settings",
+          title: "Configuración",
           tabBarIcon: ({ color }) => <IconSettings size={28} color={color} />,
         }}
-      /> */}
+      />
     </Tabs>
   );
 }
