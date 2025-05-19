@@ -1,0 +1,139 @@
+
+{
+  "home": {
+    "greeting": "Hello!",
+    "allTasksComplete": "Has completado todas las tareas del día!",
+    "viewTasksBtn": "Ver tareas",
+    "inProgressHeader": "En progreso",
+    "inProgressCount": "2",
+    "dailySubjectsHeader": "Materias del día",
+    "subjectCount": "8"
+  },
+
+  "welcome": {
+    "welcomeTitle": "Bienvenido a la aplicación de ejemplo",
+    "appName": "Plannify",
+    "slogan": "Tu aliado escolar en la palma de tu mano.",
+    "startButton": "Comenzar"
+  },
+
+  "auth": {
+    "loginPrompt": "¿Ya tienes cuenta?",
+    "loginLink": "Inicia sesión",
+    "registerTitle": "Regístrate",
+    "registerSubtitle": "Empieza gratis",
+    "startWithEmail": "Empezar con correo",
+    "emailPlaceholder": "Correo",
+    "passwordPlaceholder": "Contraseña",
+    "continueWithEmail": "Continuar con correo",
+    "orSeparator": "o",
+    "continueWithGoogle": "Continuar con Google"
+  },
+
+  "scan": {
+    "scanTitle": "Escanea tu horario",
+    "scanSubtitle": "Transforma tu horario escolar con facilidad. Solo toma una foto o sube una imagen, y nosotros haremos el resto",
+    "selectImage": "Seleccionar imagen",
+    "scanButton": "Escanear",
+    "skip": "Omitir",
+    "scheduleReadyTitle": "¡Tu horario está listo!",
+    "scheduleReadySubtitle": "Verifica que la información de tu horario haya sido transformada correctamente",
+    "readyButton": "Listo",
+    "scanFailedTitle": "Escaneo fallido",
+    "scanFailedPrompt": "¿Ingresar datos manualmente?",
+    "manualEntryOption": "Sí, continuar",
+    "retryScanOption": "Volver a intentar"
+  },
+
+  "subject": {
+    "subjectTitle": "Materias",
+    "emptySubjectMessage": "Aún no has añadido materias",
+    "addSubjectButton": "Añadir Materia",
+    "addSubjectTitle": "Añade una materia",
+    "subjectSectionTitle": "Materia",
+    "subjectNamePlaceholder": "Nombre de la materia",
+    "teacherLabel": "Docente",
+    "teacherNamePlaceholder": "Nombre del docente",
+    "colorLabel": "Color",
+    "scheduleLabel": "Horario",
+    "classroomPlaceholder": "Salón donde se imparte la clase",
+    "dayLabel": "Lunes",
+    "startTimeLabel": "De:",
+    "endTimeLabel": "a:",
+    "confirmAddButton": "Añadir"
+  },
+
+  "addSubjects": {
+    "addSubjectsTitle": "Materias",
+    "additionReady": "Listo",
+    "addSubject": "Añadir Materia"
+  },
+
+  "settings": {
+    "configTitle": "Configuración",
+    "optNotifications": "Notificaciones",
+    "optLanguage": "Idioma",
+    "optTheme": "Tema",
+    "optSync": "Sincronización",
+    "optLogout": "Cerrar sesión"
+  },
+
+  "notifications": {
+    "notificationsTitle": "Notificaciones",
+    "autoNotificationsLabel": "Notificaciones automatizadas",
+    "autoNotificationsDesc": "Las notificaciones se basan en la técnica de repetición espaciada",
+    "manualNotificationsLabel": "Notificaciones manuales",
+    "manualNotificationsDesc": "Ingresa el intervalo deseado"
+  },
+
+  "language": {
+    "languageTitle": "Idioma",
+    "languageOptionES": "ES  Español",
+    "languageOptionEN": "EN  Inglés"
+  },
+
+  "theme": {
+    "themeTitle": "Tema",
+    "lightTheme": "Claro",
+    "darkTheme": "Oscuro"
+  },
+
+  "sync": {
+    "syncTitle": "Sincronización",
+    "linkDevice": "Vincular un dispositivo",
+    "devicesTitle": "Dispositivos",
+    "deviceLogoutHint": "Toca un dispositivo para cerrar la sesión"
+  },
+
+  "tasks": {
+    "tasksTitle": "Tareas",
+    "progressHeader": "En Progreso",
+    "lateCategory": "Atrasadas",
+    "doneCategory": "Hechas"
+  },
+
+  "calendar": {
+    "calendarTitle": "Calendario",
+    "calendarTitle_en": "Calendar",
+    "calendarTitle_es": "Calendario"
+  },
+
+  "todo": {
+    "todoHeader": "Todo",
+    "category1": "Materias",
+    "category2": "Tareas"
+  },
+
+  "taskForm": {
+    "taskScreenTitle": "Tarea",
+    "taskTitleLabel": "Título",
+    "taskTitleHint": "Título de la tarea",
+    "subjectLabel": "Materia",
+    "subjectHint": "Selecciona una materia",
+    "dueDateLabel": "Entrega",
+    "dueDateHint": "dd/mm/aaaa",
+    "descriptionLabel": "Descripción",
+    "descriptionHint": "Agrega una descripción",
+    "submitButton": "Listo"
+  }
+}
