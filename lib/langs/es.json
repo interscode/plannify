@@ -1,7 +1,7 @@
 
 {
   "home": {
-    "greeting": "Hello!",
+    "greeting": "Hola!",
     "allTasksComplete": "Has completado todas las tareas del día!",
     "viewTasksBtn": "Ver tareas",
     "inProgressHeader": "En progreso",
