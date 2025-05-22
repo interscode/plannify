@@ -5,13 +5,12 @@ Tu aliado escolar en la palma de tu mano.
 ## 🚀 Tech Stack
 
 ### 📦 Backend
-- **MongoDB** – Almacenamiento principal de los datos procesados.
-- **PostgreSQL** – Base de datos para autenticación y gestión de usuarios.
+- **DynamoDB** – Almacenamiento principal de los datos procesados.
 - **Algoritmo de clasificación** – Procesamiento inteligente para interpretar y categorizar horarios escolares.
 
 ### 🔌 API
 - **HonoJS** – Framework ligero para construir la API REST en JavaScript.
-- **BetterAuth** – Sistema de autenticación robusto y flexible.
+- **AWS Cognito** – Sistema de autenticación robusto y flexible.
 - **AWS Lambda** – Infraestructura sin servidor (serverless) para desplegar las funciones del backend eficientemente.
 
 [Link del repo de la API](https://github.com/interscode/plannify-api)
