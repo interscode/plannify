@@ -1,7 +1,7 @@
 import { View, Text, TouchableOpacity } from "react-native";
 import { useRouter } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
-import UserCard from "../../features/settings/components/UserCard";
+import UserCard from "../../features/settings/components/user-card";
 
 export default function SettingsScreen() {
   const router = useRouter();
