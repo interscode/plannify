@@ -82,8 +82,9 @@
   },
   "language": {
     "languageTitle": "Language",
-    "languageOptionES": "It is Spanish",
-    "languageOptionEN": "In English"
+    "languageOptionES": " ES Spanish",
+    "languageOptionEN": " EN English"
+    
   },
   "theme": {
     "themeTitle": "Issue",
