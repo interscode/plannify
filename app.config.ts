@@ -48,8 +48,14 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     [
       "expo-camera",
       {
-        "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera",
-      }
-    ]
+        cameraPermission: "Allow $(PRODUCT_NAME) to access your camera",
+      },
+    ],
+    [
+      "expo-image-picker",
+      {
+        photosPermission: "Allow $(PRODUCT_NAME) to access your camera",
+      },
+    ],
   ],
 });

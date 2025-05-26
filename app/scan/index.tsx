@@ -1,34 +1,101 @@
-import { Link } from "expo-router";
-import { useRef, useState } from "react";
+import { Link, router } from "expo-router";
+import { useRef, useState, useEffect } from "react";
 import { Image, Pressable, Text, View, Alert } from "react-native";
 import { CameraView, useCameraPermissions } from "expo-camera";
+import * as ImagePicker from "expo-image-picker";
 
 export default function Scan() {
-  const [permission, requestPermission] = useCameraPermissions();
+  const [permission, requestCameraPermission] = useCameraPermissions();
   const [isCameraActive, setIsCameraActive] = useState(false);
   const cameraRef = useRef(null);
+  const [scanButtonPressed, setScanButtonPressed] = useState(false);
+  const [selectImagePressed, setSelectImagePressed] = useState(false);
+  const [image, setImage] = useState<string | null>(null);
 
-  if (!permission) {
-    return <View />;
-  }
+  const pickImageFromGallery = async () => {
+    setSelectImagePressed(true);
+  };
 
-  if (!permission.granted) {
-     Alert.alert(
-      "Permiso necesario",
-      "Necesitamos permiso para acceder a tu cámara para escanear tu horario.",
-      [
-        {
-          text: "Negar",
-          style: "cancel",
-        },
-        {
-          text: "Dar permiso",
-          onPress: requestPermission,
-        },
-      ]
-    );
-    return null;
-  }
+  const handleScanPress = () => {
+    setScanButtonPressed(true);
+  };
+
+  useEffect(() => {
+    if (scanButtonPressed) {
+      if (!permission) {
+        return;
+      }
+
+      if (!permission.granted) {
+        Alert.alert(
+          "Permiso necesario",
+          "Necesitamos permiso para acceder a tu cámara para escanear tu horario.",
+          [
+            {
+              text: "Negar",
+              style: "cancel",
+              onPress: () => {
+                setScanButtonPressed(false);
+              },
+            },
+            {
+              text: "Dar permiso",
+              onPress: () => {
+                requestCameraPermission();
+                setScanButtonPressed(false);
+              },
+            },
+          ],
+        );
+      } else {
+        setIsCameraActive(true);
+        setScanButtonPressed(false);
+      }
+    }
+  }, [scanButtonPressed, permission]);
+
+  useEffect(() => {
+    if (selectImagePressed) {
+      (async () => {
+        const { status } =
+          await ImagePicker.requestMediaLibraryPermissionsAsync();
+        if (status !== "granted") {
+          Alert.alert(
+            "Permiso necesario",
+            "Necesitamos permiso para acceder a tu galería para seleccionar una imagen.",
+            [
+              {
+                text: "Negar",
+                style: "cancel",
+                onPress: () => setSelectImagePressed(false),
+              },
+              {
+                text: "Dar permiso",
+                onPress: () =>
+                  ImagePicker.requestMediaLibraryPermissionsAsync(),
+              },
+            ],
+          );
+          return;
+        }
+
+        let result = await ImagePicker.launchImageLibraryAsync({
+          mediaTypes: ["images"],
+          allowsEditing: true,
+          aspect: [4, 3],
+          quality: 1,
+        });
+
+        console.log(result);
+
+        if (!result.canceled) {
+          setImage(result.assets[0].uri);
+        }
+        setSelectImagePressed(false);
+      })();
+    }
+  }, [selectImagePressed]);
+
   const takePicture = async () => {
     if (cameraRef.current) {
       try {
@@ -40,10 +107,6 @@ export default function Scan() {
         console.error("Error al tomar la foto:", error);
       }
     }
-  };
-
-  const handleScanPress = () => {
-    setIsCameraActive(true);
   };
 
   if (isCameraActive) {
@@ -90,7 +153,10 @@ export default function Scan() {
       </View>
 
       <View className="items-center gap-2">
-        <Pressable className="w-full items-center rounded-lg border border-[#000080]">
+        <Pressable
+          className="w-full items-center rounded-lg border border-[#000080]"
+          onPress={pickImageFromGallery}
+        >
           <Text className="p-4 text-xl font-semibold color-[#000080]">
             Seleccionar imagen
           </Text>
