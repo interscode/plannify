@@ -36,6 +36,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   },
   plugins: [
     "expo-router",
+    "expo-localization",
     [
       "expo-secure-store",
       {
@@ -44,5 +45,11 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
           "Allow $(PRODUCT_NAME) to access your Face ID biometric data.",
       },
     ],
+    [
+      "expo-camera",
+      {
+        "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera",
+      }
+    ]
   ],
 });
