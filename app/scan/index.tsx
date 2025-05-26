@@ -1,7 +1,10 @@
 import { Link } from "expo-router";
+import React from "react";
+import { useTranslation } from "react-i18next";
 import { Image, Pressable, Text, View } from "react-native";
 
 export default function Scan() {
+  const { t, i18n } = useTranslation();
   return (
     <View className="flex w-full flex-1 bg-[#F8F8FF] py-[5vh]">
       <View className="mb-auto items-center">
@@ -9,23 +12,22 @@ export default function Scan() {
           source={require("../../assets/icon-light.png")}
           className="h-[100] w-[100] rounded-[25]"
         />
-        <Text className="mt-10 text-3xl font-bold">Escanea tu horario</Text>
+        <Text className="mt-10 text-3xl font-bold">{t("scan.scanTitle")}</Text>
         <Text className="text-center text-lg">
-          Transforma tu horario escolar con facilidad. Solo toma una foto o sube
-          una imagen, y nosotros haremos el resto
+          {t("scan.scanSubtitle")}
         </Text>
       </View>
 
       <View className="items-center gap-2">
         <Pressable className="w-full items-center rounded-lg border border-[#000080]">
           <Text className="p-4 text-xl font-semibold color-[#000080]">
-            Seleccionar imagen
+            {t("scan.selectImage")}
           </Text>
         </Pressable>
         <Link href="" asChild>
           <Pressable className="w-full items-center rounded-lg bg-[#000080]">
             <Text className="p-4 text-xl font-semibold color-[#FFFFFF]">
-              Escanear
+              {t("scan.scanButton")}
             </Text>
           </Pressable>
         </Link>

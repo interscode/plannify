@@ -6,8 +6,11 @@ import {
   IconBellCog,
   IconBellX,
 } from "@tabler/icons-react-native";
+import React from "react";
+import { useTranslation } from "react-i18next";
 
 export default function SettingsScreen() {
+  const { t, i18n } = useTranslation();
   const userImage = require("../../../assets/gatito_persa.png");
 
   return (
@@ -25,8 +28,8 @@ export default function SettingsScreen() {
         <View className="mb-4 rounded-lg bg-white">
           <SettingsButton
             icon={IconBellBolt}
-            title="Notificaciones automatizadas"
-            subtitle="Las notificaciones se basan en la técnica de repetición espaciada"
+            title={t("notifications.autoNotificationsLabel")}
+            subtitle={t("notifications.autoNotificationsDesc")}
           />
         </View>
 
@@ -34,8 +37,8 @@ export default function SettingsScreen() {
         <View className="mb-4 rounded-lg bg-white">
           <SettingsButton
             icon={IconBellCog}
-            title="Notificaciones manuales"
-            subtitle="Ingresa el intervalo en el que te envieremos las notificaciones"
+            title={t("notifications.manualNotificationsLabel")}
+            subtitle={t("notifications.manualNotificationsDesc")}
           />
         </View>
 
@@ -43,8 +46,8 @@ export default function SettingsScreen() {
         <View className="mb-4 rounded-lg bg-white">
           <SettingsButton
             icon={IconBellX}
-            title="Notificaciones desactivadas"
-            subtitle="No te enviaremos ninguna notificación"
+            title={t("notifications.deactivatedNotificationsLabel")}
+            subtitle= {t("notifications.deactivatedNotificationsDesc")}
           />
         </View>
       </View>

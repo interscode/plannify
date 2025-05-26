@@ -4,8 +4,9 @@ const RNLocalize = {
   getLocales: () => [{ languageCode: 'en' }]
 };
 
-const en = require('./langs/en.json');
-const es = require('./langs/es.json');
+const en = require('./lib/langs/en.json');
+const es = require('./lib/langs/es.json');
+
 
 i18n
   .use(initReactI18next)
