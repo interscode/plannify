@@ -1,7 +1,6 @@
 import { View, Text, TouchableOpacity } from "react-native";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
-import React from "react";
 
 export default function SettingsScreen() {
   const { t, i18n } = useTranslation();
