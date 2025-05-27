@@ -43,7 +43,7 @@ export default function App() {
       </Pressable>
       <Link href="/auth/signup">
          {t("loginScreen.noAccountPrompt")}{" "}
-        <Text className="font-bold text-primary">Registrate</Text>
+        <Text className="font-bold text-primary">{t("loginScreen.signInPrompt")}</Text>
       </Link>
       <Link href="/home">Home</Link>
     </View>

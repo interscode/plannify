@@ -1,5 +1,6 @@
 import { View, Text, Pressable } from "react-native";
 import { Link } from "expo-router";
+import React from "react";
 
 const ejemploTarea = {
   materia: "Big Data",

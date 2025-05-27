@@ -1,6 +1,7 @@
 import ClassesList from "@/features/classes/components/ClassesList";
 import EmptyClassesPlaceHolder from "@/features/classes/components/EmptyClassesPlaceHolder";
 import StandardLink from "@/shared/components/StandardLink";
+import React from "react";
 import { View } from "react-native";
 
 type ClassItems = {
