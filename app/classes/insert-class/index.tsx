@@ -2,7 +2,6 @@ import Customization from "@/features/classes/insert-class/components/Customizat
 import NameAndTeacher from "@/features/classes/insert-class/components/NameAndTeacher";
 import SchedulePicker from "@/features/classes/insert-class/components/ScheduleSection";
 import StandardLink from "@/shared/components/StandardLink";
-import React from "react";
 import { View } from "react-native";
 
 export default function InsertClass() {
