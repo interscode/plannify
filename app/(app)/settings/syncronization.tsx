@@ -2,8 +2,11 @@ import { View, Text, TouchableOpacity } from "react-native";
 import UserCard from "@/features/settings/components/user-card";
 import { SettingsButton } from "@/features/settings/components/settings-button";
 import { IconBrandWindows, IconBrandAndroid } from "@tabler/icons-react-native";
+import React from "react";
+import { useTranslation } from "react-i18next";
 
 export default function SettingsScreen() {
+  const { t, i18n } = useTranslation();
   const userImage = require("../../../assets/gatito_persa.png");
 
   return (
@@ -25,16 +28,16 @@ export default function SettingsScreen() {
           onPress={() => console.log("Sincronización")}
         >
           <Text className="text-base font-medium" style={{ color: "#F8F8FF" }}>
-            Vincular un dispositivo
+            {t("sync.linkDevice")}
           </Text>
         </TouchableOpacity>
       </View>
 
       {/* Sección de dispositivos */}
       <View className="mb-4 mt-4 overflow-hidden rounded-xl">
-        <Text className="text-base font-bold">Dispositivos</Text>
+        <Text className="text-base font-bold">  {t("sync.devicesTitle")} </Text>
         <Text className="mb-2 text-base font-normal">
-          Toca un dispositivo para cerrar la sesión
+          {t("sync.deviceLogoutHint")}
         </Text>
 
         {/* Lista de dispositivos */}

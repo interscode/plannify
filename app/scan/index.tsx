@@ -11,6 +11,8 @@ export default function Scan() {
   const [scanButtonPressed, setScanButtonPressed] = useState(false);
   const [selectImagePressed, setSelectImagePressed] = useState(false);
   const [image, setImage] = useState<string | null>(null);
+  const { t, i18n } = useTranslation();
+  import { useTranslation } from "react-i18next";
 
   const pickImageFromGallery = async () => {
     setSelectImagePressed(true);
@@ -137,7 +139,7 @@ export default function Scan() {
       </View>
     );
   }
-
+  
   return (
     <View className="flex w-full flex-1 bg-[#F8F8FF] py-[5vh]">
       <View className="mb-auto items-center">
@@ -145,10 +147,9 @@ export default function Scan() {
           source={require("../../assets/icon-light.png")}
           className="h-[100] w-[100] rounded-[25]"
         />
-        <Text className="mt-10 text-3xl font-bold">Escanea tu horario</Text>
+        <Text className="mt-10 text-3xl font-bold">{t("scan.scanTitle")}</Text>
         <Text className="text-center text-lg">
-          Transforma tu horario escolar con facilidad. Solo toma una foto o sube
-          una imagen, y nosotros haremos el resto
+          {t("scan.scanSubtitle")}
         </Text>
       </View>
 
@@ -158,7 +159,7 @@ export default function Scan() {
           onPress={pickImageFromGallery}
         >
           <Text className="p-4 text-xl font-semibold color-[#000080]">
-            Seleccionar imagen
+            {t("scan.selectImage")}
           </Text>
         </Pressable>
         <Pressable
@@ -166,7 +167,7 @@ export default function Scan() {
           onPress={handleScanPress}
         >
           <Text className="p-4 text-xl font-semibold color-[#FFFFFF]">
-            Escanear
+            {t("scan.scanButton")}
           </Text>
         </Pressable>
         <Link href="" className="mt-4 text-lg text-[#C0C0C0] underline">

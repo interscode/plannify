@@ -1,13 +1,16 @@
 import Button from "@/shared/components/button";
+import React from "react";
+import { useTranslation } from "react-i18next";
 import { Text, View } from "react-native";
 import Svg, { Circle } from "react-native-svg";
 
 export default function Progress() {
+  const { t, i18n } = useTranslation();
   return (
     <View className="h-40 flex-row items-center justify-between rounded-2xl bg-primary px-4 py-6">
       <View className="h-full w-3/5 items-start justify-between">
         <Text className="tetx-lg text-white">
-          ¡Has completado todas las tareas del dia!
+          {t("home.allTasksComplete")}
         </Text>
         <Button
           small
@@ -16,7 +19,7 @@ export default function Progress() {
           onPress={() => {}}
           link="/tasks"
         >
-          <Text className="font-bold text-primary">Ver Tareas</Text>
+          <Text className="font-bold text-primary">{t("home.viewTasksBtn")}</Text>
         </Button>
       </View>
       <ProgressCircle

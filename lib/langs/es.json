@@ -17,6 +17,49 @@
     "startButton": "Comenzar"
   },
 
+  "welcomeScreen": {
+  "appName": "Plannify",
+  "tagline": "Tu aliado escolar en la palma de tu mano.",
+  "getStartedButton": "Comenzar",
+  "alreadyHaveAccount": "¿Ya tienes cuenta?",
+  "loginLink": "Inicia"
+  },
+
+  "loginScreen": {
+    "title": "Iniciar sesión",
+    "subtitle": "¡Hola! nos da gusto que regreses",
+    "loginWithEmail": "Iniciar con Correo",
+    "emailLabel": "Correo",
+    "emailPlaceholder": "Ingresa tu correo...",
+    "passwordLabel": "Contraseña",
+    "passwordPlaceholder": "Ingresa una contraseña...",
+    "continueWithEmail": "Continuar con correo",
+    "or": "o",
+    "continueWithGoogle": "Continuar con Google",
+    "noAccountPrompt": "¿Aun no tienes cuenta?",
+    "goToRegister": "Home"
+  },
+
+  
+  "registerScreen": {
+    "title": "Regístrate",
+    "subtitle": "Empieza",
+    "registerWithEmail": "Empezar con correo",
+    "nameLabel": "Nombre",
+    "namePlaceholder": "Ingresa tu nombre...",
+    "emailLabel": "Correo",
+    "emailPlaceholder": "Ingresa tu correo...",
+    "passwordLabel": "Contraseña",
+    "passwordPlaceholder": "Ingresa una contraseña...",
+    "continueWithEmail": "Continuar con correo",
+    "or": "o",
+    "continueWithGoogle": "Continuar con Google",
+    "alreadyHaveAccount": "¿Ya tienes cuenta?",
+    "goToLogin": "Inicia",
+    "welcom": "Welcom"
+  },
+
+
   "auth": {
     "loginPrompt": "¿Ya tienes cuenta?",
     "loginLink": "Inicia sesión",
@@ -83,19 +126,22 @@
     "autoNotificationsLabel": "Notificaciones automatizadas",
     "autoNotificationsDesc": "Las notificaciones se basan en la técnica de repetición espaciada",
     "manualNotificationsLabel": "Notificaciones manuales",
-    "manualNotificationsDesc": "Ingresa el intervalo deseado"
+    "manualNotificationsDesc": "Ingresa el intervalo deseado",
+    "deactivatedNotificationsLabel": "Notificaciones desactivadas",
+    "deactivatedNotificationsDesc": "No recibirás notificaciones"
   },
 
   "language": {
     "languageTitle": "Idioma",
-    "languageOptionES": "ES  Español",
-    "languageOptionEN": "EN  Inglés"
+    "languageOptionES": "Español",
+    "languageOptionEN": "Inglés"
   },
 
   "theme": {
     "themeTitle": "Tema",
     "lightTheme": "Claro",
-    "darkTheme": "Oscuro"
+    "darkTheme": "Oscuro",
+    "systemTheme": "Sistema"
   },
 
   "sync": {

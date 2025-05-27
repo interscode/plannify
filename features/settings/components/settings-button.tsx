@@ -1,5 +1,6 @@
 import { Icon, IconChevronRight } from "@tabler/icons-react-native";
 import { Link } from "expo-router";
+import React from "react";
 import { Text } from "react-native";
 import { View } from "react-native";
 import { Pressable } from "react-native";

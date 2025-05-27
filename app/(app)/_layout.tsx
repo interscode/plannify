@@ -8,8 +8,12 @@ import {
   IconSquareRoundedCheck,
 } from "@tabler/icons-react-native";
 import { Tabs } from "expo-router";
+import React from "react";
 
 export default function AppLayout() {
+  console.log("AppLayout");
+
+
   return (
     <Tabs
       screenOptions={{

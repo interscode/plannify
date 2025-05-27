@@ -11,9 +11,12 @@ import {
   IconPencil,
 } from "@tabler/icons-react-native";
 import { Link } from "expo-router";
+import React from "react";
+import { useTranslation } from "react-i18next";
 import { Pressable, StatusBar, Text, View } from "react-native";
 
 export default function App() {
+  const { t, i18n } = useTranslation();
   return (
     <View className="flex flex-1 items-center justify-center px-8 py-[5vh]">
       <StatusBar backgroundColor="#f8f8ff" />
@@ -48,17 +51,17 @@ export default function App() {
       </View>
       <Text className="mb-2 text-3xl font-bold">Plannify</Text>
       <Text className="mb-auto w-3/5 text-center text-lg">
-        Tu aliado escolar en la palma de tu mano.
+        {t("welcome.slogan")}
       </Text>
       <Link href="/auth/signup" asChild>
         <Pressable className="mb-2 flex h-12 w-full flex-row items-center justify-center gap-2 rounded-lg bg-primary">
-          <Text className="text-xl font-bold text-white">Comenzar</Text>
+          <Text className="text-xl font-bold text-white">{t("welcome.startButton")}</Text>
           <IconLogin2 size={25} color="#fff" />
         </Pressable>
       </Link>
       <Link href="/auth/signin">
-        ¿Ya tienes cuenta?{" "}
-        <Text className="font-bold text-primary">Inicia sesión</Text>
+         {t("welcome.alreadyHaveAccount")}{" "}
+        <Text className="font-bold text-primary">{t("welcome.loginLink")}</Text>
       </Link>
     </View>
   );

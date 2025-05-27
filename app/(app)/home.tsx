@@ -1,6 +1,8 @@
 import Progress from "@/features/home/components/progress";
 import Subject from "@/shared/components/subject";
 import Task from "@/shared/components/task";
+import React from "react";
+import { useTranslation } from "react-i18next";
 import { FlatList, ScrollView, StatusBar, Text } from "react-native";
 import { View } from "react-native";
 
@@ -83,12 +85,13 @@ const subjects = [
 ];
 
 export default function Home() {
+  const { t, i18n } = useTranslation();
   return (
     <View className="h-screen gap-2 bg-light">
       <StatusBar backgroundColor="#f8f8ff" />
       <Progress />
       <View>
-        <Text className="mb-2 text-lg font-bold">En progreso</Text>
+        <Text className="mb-2 text-lg font-bold"> {t("home.inProgressHeader")}</Text>
         <FlatList
           data={tasks}
           renderItem={({ item }) => (
@@ -108,7 +111,7 @@ export default function Home() {
         />
       </View>
       <View className="h-[44vh]">
-        <Text className="mb-2 text-lg font-bold">Materias del dia</Text>
+        <Text className="mb-2 text-lg font-bold">{t("home.dailySubjectsHeader")}</Text>
         <FlatList
           data={subjects}
           renderItem={({ item }) => (

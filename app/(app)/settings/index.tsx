@@ -10,8 +10,11 @@ import {
   IconRefresh,
 } from "@tabler/icons-react-native";
 import { SettingsButton } from "@/features/settings/components/settings-button";
+import React from "react";
+import { useTranslation } from "react-i18next";
 
 export default function Settings() {
+  const { t, i18n } = useTranslation();
   const router = useRouter();
   const userImage = require("../../../assets/gatito_persa.png");
 
@@ -28,19 +31,19 @@ export default function Settings() {
       <View className="mb-4 overflow-hidden rounded-lg border border-gray-100 bg-white">
         <SettingsButton
           icon={IconBell}
-          title="Notificaciones"
+          title={t("settings.optNotifications")}
           isSubmenu
           href="/settings/notification"
         />
         <SettingsButton
           icon={IconLanguage}
-          title="Idioma"
+          title={t("settings.optLanguage")}
           isSubmenu
           href="/settings/language"
         />
         <SettingsButton
           icon={IconPalette}
-          title="Tema"
+          title={t("settings.optTheme")}
           isSubmenu
           isLast
           href="/settings/theme"
@@ -51,7 +54,7 @@ export default function Settings() {
       <View className="mb-4 mt-4 overflow-hidden rounded-lg bg-white">
         <SettingsButton
           icon={IconRefresh}
-          title="Sincronización"
+          title={t("settings.optSync")}
           color="#000080"
           isLast
           href="/settings/syncronization"
@@ -62,7 +65,7 @@ export default function Settings() {
       <View className="mb-4 mt-2 overflow-hidden rounded-lg bg-white">
         <SettingsButton
           icon={IconLogout}
-          title="Cerrar sesión"
+          title={t("settings.optLogout")}
           color="#ff2c2c"
           isLast
         />

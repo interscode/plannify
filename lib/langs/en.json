@@ -5,15 +5,60 @@
     "viewTasksBtn": "See tasks",
     "inProgressHeader": "In progress",
     "inProgressCount": "2",
-    "dailySubjectsHeader": "Materials of the day",
+    "dailySubjectsHeader": "Subjects of the day",
     "subjectCount": "8"
   },
   "welcome": {
     "welcomeTitle": "Welcome to the example application",
     "appName": "Plannify",
     "slogan": "Your school ally on the palm of your hand.",
-    "startButton": "Begin"
+    "alreadyHaveAccount": "Already have an account?",
+    "startButton": "Begin",
+    "loginLink": "Log In"
   },
+
+  "welcomeScreen": {
+  "appName": "Plannify",
+  "tagline": "Your school ally in the palm of your hand.",
+  "getStartedButton": "Get Started",
+  "alreadyHaveAccount": "Already have an account?",
+  "loginLink": "Log In"
+  },
+
+
+ "loginScreen": {
+    "title": "Log In",
+    "subtitle": "Hi! we're glad you're back",
+    "loginWithEmail": "Log in with Email",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter your email...",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter a password...",
+    "continueWithEmail": "Continue with Email",
+    "or": "or",
+    "continueWithGoogle": "Continue with Google",
+    "noAccountPrompt": "Don't have an account?",
+    "goToRegister": "Home"
+  },
+
+  "registerScreen": {
+    "title": "Sign Up",
+    "subtitle": "Get started for free",
+    "registerWithEmail": "Start with Email",
+    "nameLabel": "Name",
+    "namePlaceholder": "Enter your name...",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter your email...",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter a password...",
+    "continueWithEmail": "Continue with Email",
+    "or": "or",
+    "continueWithGoogle": "Continue with Google",
+    "alreadyHaveAccount": "Already have an account?",
+    "goToLogin": "Log In",
+    "welcom": "Welcome"
+  },
+
   "auth": {
     "loginPrompt": "Do you already have an account?",
     "loginLink": "Locate session",
@@ -26,6 +71,7 @@
     "orSeparator": "or",
     "continueWithGoogle": "Continue with Google"
   },
+
   "scan": {
     "scanTitle": "Scan your schedule",
     "scanSubtitle": "Transform your school schedule easily. ",
@@ -66,7 +112,7 @@
     "configTitle": "Configuration",
     "optNotifications": "Notifications",
     "optLanguage": "Language",
-    "optTheme": "Issue",
+    "optTheme": "Theme",
     "optSync": "Synchronization",
     "optLogout": "Close session"
   },
@@ -76,19 +122,21 @@
     "autoNotificationsDesc": "Notifications are based on the spaced repetition technique",
     "manualNotificationsLabel": "Manual notifications",
     "manualNotificationsDesc": "Enter the desired interval",
-    "notificationTimeExample": "12:00 a.m.",
-    "notification1": "Plannify: The delivery of practice 6 is tomorrow!",
-    "notification2": "Plannify: Your next class is in Hall A15"
+    "deactivatedNotificationsLabel": "Deactivated notifications",
+    "deactivatedNotificationsDesc": "You will not receive notifications"
+  
   },
   "language": {
     "languageTitle": "Language",
-    "languageOptionES": "It is Spanish",
-    "languageOptionEN": "In English"
+    "languageOptionES": "Spanish",
+    "languageOptionEN": "English"
+    
   },
   "theme": {
     "themeTitle": "Issue",
-    "lightTheme": "Clear",
-    "darkTheme": "Dark"
+    "lightTheme": "Light",
+    "darkTheme": "Dark",
+    "systemTheme": "System"
   },
   "sync": {
     "syncTitle": "Synchronization",
