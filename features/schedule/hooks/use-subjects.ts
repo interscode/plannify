@@ -12,7 +12,7 @@ export function useSubjects() {
   const getSubjects = async () => {
     setLoading(true);
     try {
-      const response = await api.get("/subjects?userId=" + user?.user_id);
+      const response = await api.get("/subjects?userId=" + user?.sub);
       setSubjects(response.data);
     } catch (err) {
       setError("Error al obtener las tareas. Por favor, inténtalo de nuevo.");

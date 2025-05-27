@@ -1,10 +1,17 @@
 import { Link } from "expo-router";
 import { useRef, useState, useEffect } from "react";
 import { Pressable, Text, View, Alert } from "react-native";
-import { CameraView, useCameraPermissions } from "expo-camera";
+import {
+  CameraCapturedPicture,
+  CameraView,
+  useCameraPermissions,
+} from "expo-camera";
 import * as ImagePicker from "expo-image-picker";
 import { useTranslation } from "react-i18next";
 import Logo from "@/shared/components/logo";
+import { scanSchedule } from "@/features/schedule/services/scan-schedule";
+import { useAuth } from "@/shared/hooks/use-auth";
+import { useRouter } from "expo-router";
 
 export default function Scan() {
   const [permission, requestCameraPermission] = useCameraPermissions();
@@ -12,8 +19,10 @@ export default function Scan() {
   const cameraRef = useRef(null);
   const [scanButtonPressed, setScanButtonPressed] = useState(false);
   const [selectImagePressed, setSelectImagePressed] = useState(false);
-  const [image, setImage] = useState<string | null>(null);
+  const [image, setImage] = useState<ImagePicker.ImagePickerAsset | null>(null);
   const { t } = useTranslation();
+  const { user } = useAuth();
+  const router = useRouter();
 
   const pickImageFromGallery = async () => {
     setSelectImagePressed(true);
@@ -92,12 +101,47 @@ export default function Scan() {
         console.log(result);
 
         if (!result.canceled) {
-          setImage(result.assets[0].uri);
+          setImage(result.assets[0]);
         }
         setSelectImagePressed(false);
       })();
     }
   }, [selectImagePressed]);
+
+  useEffect(() => {
+    async function handleScanSchedule() {
+      if (image) {
+        console.log("Imagen: " + image.mimeType);
+        const formData = new FormData();
+
+        formData.append("file", {
+          uri: image.uri,
+          name: image.fileName,
+          type: image.mimeType,
+        } as any);
+
+        formData.append("userId", user?.sub);
+
+        try {
+          console.log("Tipo: " + formData.get("file"));
+          const data = await scanSchedule(formData);
+          console.log("Datos escaneados:", data);
+          router.push("/auth/callback");
+        } catch (error) {
+          console.error("Error al procesar la imagen:", error);
+          Alert.alert(
+            "Error",
+            "No se pudo procesar la imagen. Por favor, inténtalo de nuevo.",
+          );
+        }
+      }
+    }
+
+    if (image) {
+      handleScanSchedule();
+      setImage(null);
+    }
+  }, [image]);
 
   const takePicture = async () => {
     if (cameraRef.current) {
@@ -176,7 +220,7 @@ export default function Scan() {
             {t("scan.scanButton")}
           </Text>
         </Pressable>
-        <Link href="" className="mt-2 text-lg text-[#C0C0C0] underline">
+        <Link href="/" className="mt-2 text-lg text-[#C0C0C0] underline">
           Agregar manualmente
         </Link>
       </View>

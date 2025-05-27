@@ -14,7 +14,7 @@ export default function Signin() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [showPassword, setShowPassword] = useState(false);
-  const { signInWithEmail, actionLoading } = useAuth();
+  const { signInWithEmail, actionLoading, signInWithGoogle } = useAuth();
   const { t } = useTranslation();
 
   const handleSignIn = async () => {
@@ -88,7 +88,10 @@ export default function Signin() {
         <Text className="mx-2 text-[#c0c0c0]">{t("loginScreen.or")}</Text>
         <View className="h-[1px] w-[45%] bg-[#e0e0e0]" />
       </View>
-      <Pressable className="mb-2 flex h-12 w-full flex-row items-center justify-center gap-2 rounded-lg border border-[#e0e0e0] bg-white">
+      <Pressable
+        onPress={signInWithGoogle}
+        className="mb-2 flex h-12 w-full flex-row items-center justify-center gap-2 rounded-lg border border-[#e0e0e0] bg-white"
+      >
         <GoogleLogo />
         <Text className="text-xl font-bold">
           {t("loginScreen.continueWithGoogle")}

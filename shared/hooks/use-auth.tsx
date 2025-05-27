@@ -81,7 +81,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       });
       if (isSignedIn) {
         await loadUser();
-        router.push("/home");
+        router.push("/auth/callback");
       } else if (nextStep.signInStep === "CONFIRM_SIGN_UP") {
         router.push(`/auth/confirm-signup?email=${email}`);
       }
