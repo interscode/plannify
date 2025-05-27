@@ -10,7 +10,9 @@ export const theme = {
     colors: {
       primary: "#000080",
       light: "#f8f8ff",
+      dark: "#0a0a0a",
     },
   },
 };
+export const darkMode = "class";
 export const plugins = [];

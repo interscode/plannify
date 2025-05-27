@@ -1,23 +1,26 @@
 import Header from "@/shared/components/header";
 import {
   IconCalendar,
-  IconCalendarFilled,
   IconHome,
   IconHomeFilled,
   IconSettings,
   IconSquareRoundedCheck,
 } from "@tabler/icons-react-native";
 import { Tabs } from "expo-router";
-import React from "react";
+import { useTranslation } from "react-i18next";
+import { useTheme } from "@/shared/hooks/use-theme";
 
 export default function AppLayout() {
-  console.log("AppLayout");
-
+  const { t } = useTranslation();
+  const { theme } = useTheme();
 
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: "#000080",
+        tabBarActiveTintColor: theme === "light" ? "#0a0a0a" : "#f8f8ff",
+        tabBarStyle: {
+          backgroundColor: theme === "light" ? "#f8f8ff" : "#0a0a0a",
+        },
         header: ({ route, navigation, options, layout }) => (
           <Header
             route={route}
@@ -26,13 +29,15 @@ export default function AppLayout() {
             layout={layout}
           />
         ),
-        sceneStyle: { backgroundColor: "#f8f8ff" },
+        sceneStyle: {
+          backgroundColor: theme === "light" ? "#f8f8ff" : "#0a0a0a",
+        },
       }}
     >
       <Tabs.Screen
         name="home"
         options={{
-          title: "Home",
+          title: t("home.homeTitle"),
           tabBarIcon: ({ color, focused }) =>
             focused ? (
               <IconHomeFilled size={28} color={color} fill={color} />
@@ -44,16 +49,14 @@ export default function AppLayout() {
       <Tabs.Screen
         name="calendar"
         options={{
-          title: "Calendar",
-          tabBarIcon: ({ color, focused }) => (
-            <IconCalendar size={28} color={color} />
-          ),
+          title: t("calendar.calendarTitle"),
+          tabBarIcon: ({ color }) => <IconCalendar size={28} color={color} />,
         }}
       />
       <Tabs.Screen
         name="tasks"
         options={{
-          title: "Tareas",
+          title: t("tasks.tasksTitle"),
           tabBarIcon: ({ color }) => (
             <IconSquareRoundedCheck size={28} color={color} />
           ),
@@ -62,8 +65,9 @@ export default function AppLayout() {
       <Tabs.Screen
         name="settings"
         options={{
-          title: "Configuración",
+          title: t("settings.configTitle"),
           tabBarIcon: ({ color }) => <IconSettings size={28} color={color} />,
+          headerShown: false,
         }}
       />
     </Tabs>
