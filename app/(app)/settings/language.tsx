@@ -14,14 +14,9 @@ export default function SettingsScreen() {
       />
 
       {/* Opciones de Configuración */}
-      <View className="shadow-xs mb-4 rounded-xl">
-        <View className="mb-4 rounded-lg bg-white">
-          <SettingsButton icon="ES" title="Español" isLast />
-        </View>
-
-        <View className="rounded-lg bg-white">
-          <SettingsButton icon="EN" title="Ingles" isLast />
-        </View>
+      <View className="mb-4 rounded-lg bg-white dark:bg-[#212121]">
+        <SettingsButton icon="ES" title="Español" />
+        <SettingsButton icon="EN" title="Ingles" isLast />
       </View>
     </View>
   );

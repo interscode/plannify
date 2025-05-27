@@ -1,26 +1,33 @@
 import { View, Text, Image } from "react-native";
+import { useAuth } from "@/shared/hooks/use-auth";
 
-type UserCardProps = {
-  name: string;
-  provider: string;
-  imageSource: any;
-};
+export default function UserCard() {
+  const { user } = useAuth();
 
-export default function UserCard({
-  name,
-  provider,
-  imageSource,
-}: UserCardProps) {
   return (
-    <View className="mb-4 flex-row items-center rounded-xl bg-white p-4">
-      <Image
-        source={imageSource}
-        className="mr-4 h-12 w-12 rounded-full"
-        resizeMode="cover"
-      />
-      <View>
-        <Text className="text-base font-semibold text-black">{name}</Text>
-        <Text className="text-sm text-gray-500">{provider}</Text>
+    <View className="mb-4 flex-row items-center rounded-xl bg-white p-4 dark:bg-[#212121]">
+      {user?.picutre ? (
+        <Image
+          source={user.picture}
+          className="mr-4 h-12 w-12 rounded-full"
+          resizeMode="cover"
+        />
+      ) : (
+        <View className="size-12 items-center justify-center rounded-xl bg-primary">
+          <Text className="text-2xl font-bold text-white">
+            {user?.name?.charAt(0).toUpperCase()}
+          </Text>
+        </View>
+      )}
+      <View className="ml-2">
+        <Text className="text-base font-semibold text-black dark:text-light">
+          {user?.name}
+        </Text>
+        <Text className="text-sm text-gray-500 dark:text-gray-400">
+          {user?.identities
+            ? JSON.parse(user?.identities)[0]?.providerName
+            : "Email"}
+        </Text>
       </View>
     </View>
   );

@@ -17,7 +17,7 @@ export default function SettingsScreen() {
 
       {/* Botón de sincronización */}
       <View
-        className="mb-4 mt-4 overflow-hidden rounded-xl p-4"
+        className="overflow-hidden rounded-xl p-4"
         style={{ backgroundColor: "#000080", borderWidth: 1 }}
       >
         <TouchableOpacity
@@ -32,25 +32,29 @@ export default function SettingsScreen() {
 
       {/* Sección de dispositivos */}
       <View className="mb-4 mt-4 overflow-hidden rounded-xl">
-        <Text className="text-base font-bold">Dispositivos</Text>
-        <Text className="mb-2 text-base font-normal">
+        <Text className="text-base font-bold dark:text-light">
+          Dispositivos
+        </Text>
+        <Text className="mb-2 text-base font-normal dark:text-light">
           Toca un dispositivo para cerrar la sesión
         </Text>
 
         {/* Lista de dispositivos */}
         <View className="mb-4 mt-2 gap-y-4 overflow-hidden">
-          <View className="rounded-lg bg-white">
+          <View className="rounded-lg bg-white dark:bg-[#212121]">
             <SettingsButton
               icon={IconBrandWindows}
               title="Windows"
               subtitle="Última vez activo 12 de febrero, 5:30 p.m."
+              isLast
             />
           </View>
-          <View className="rounded-lg bg-white">
+          <View className="rounded-lg bg-white dark:bg-[#212121]">
             <SettingsButton
               icon={IconBrandAndroid}
               title="Android"
               subtitle="Última vez activo 12 de febrero, 5:30 p.m."
+              isLast
             />
           </View>
         </View>

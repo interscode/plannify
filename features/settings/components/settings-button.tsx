@@ -1,8 +1,7 @@
-import { Icon, IconChevronRight } from "@tabler/icons-react-native";
+import { Icon, IconCheck, IconChevronRight } from "@tabler/icons-react-native";
 import { Link } from "expo-router";
-import { Text } from "react-native";
-import { View } from "react-native";
-import { Pressable } from "react-native";
+import { Text, View, Pressable } from "react-native";
+import { useThemeStore } from "@/shared/hooks/use-theme";
 
 interface SettingButtonProps {
   href?: string;
@@ -13,6 +12,7 @@ interface SettingButtonProps {
   isLast?: boolean;
   onPress?: () => void;
   color?: string;
+  selected?: boolean;
 }
 
 export function SettingsButton({
@@ -24,35 +24,57 @@ export function SettingsButton({
   isLast,
   onPress,
   color,
+  selected,
 }: SettingButtonProps) {
   const Icon = icon;
+  const theme = useThemeStore((state) => state.resolvedTheme);
 
   if (!href) {
     return (
       <Pressable
-        className="flex flex-row justify-between border-gray-100 p-4"
+        className="flex flex-row justify-between border-gray-100 p-4 dark:border-gray-700"
         style={{ borderBottomWidth: isLast ? 0 : 1 }}
         onPress={onPress}
       >
-        <View className="flex flex-row items-center justify-start gap-3">
+        <View className="flex flex-row items-center gap-3">
           {typeof icon === "string" ? (
-            <Text className="text-xl font-bold">{icon}</Text>
+            <Text className="text-xl font-bold dark:text-light">{icon}</Text>
           ) : (
-            <Icon size={25} color={color ? color : "#000"} />
+            <Icon
+              size={25}
+              color={color ? color : theme === "light" ? "#0a0a0a" : "#f8f8ff"}
+            />
           )}
-          <View className="w-[90%] pr-2">
+          <View>
             <Text
               className="font-semibold"
-              style={{ color: color ? color : "#000" }}
+              style={{
+                color: color
+                  ? color
+                  : theme === "light"
+                    ? "#0a0a0a"
+                    : "#f8f8ff",
+              }}
             >
               {title}
             </Text>
             {subtitle && (
-              <Text className="text-balance text-sm">{subtitle}</Text>
+              <Text className="w-[60%] text-balance text-sm dark:text-light">
+                {subtitle}
+              </Text>
             )}
           </View>
         </View>
-        {isSubmenu && <IconChevronRight />}
+        {selected && (
+          <IconCheck
+            color={color ? color : theme === "light" ? "#0a0a0a" : "#f8f8ff"}
+          />
+        )}
+        {isSubmenu && (
+          <IconChevronRight
+            color={color ? color : theme === "light" ? "#0a0a0a" : "#f8f8ff"}
+          />
+        )}
       </Pressable>
     );
   }
@@ -60,26 +82,44 @@ export function SettingsButton({
   return (
     <Link href={href} asChild>
       <Pressable
-        className="flex flex-row justify-between border-gray-100 p-4"
+        className="flex flex-row justify-between border-gray-100 p-4 dark:border-gray-700"
         style={{ borderBottomWidth: isLast ? 0 : 1 }}
       >
         <View className="flex flex-row items-center gap-3">
           {typeof icon === "string" ? (
-            <Text className="text-xl font-bold">{icon}</Text>
+            <Text className="text-xl font-bold dark:text-light">{icon}</Text>
           ) : (
-            <Icon size={25} color={color ? color : "#000"} />
+            <Icon
+              size={25}
+              color={color ? color : theme === "light" ? "#0a0a0a" : "#f8f8ff"}
+            />
           )}
           <View>
             <Text
               className="font-semibold"
-              style={{ color: color ? color : "#000" }}
+              style={{
+                color: color
+                  ? color
+                  : theme === "light"
+                    ? "#0a0a0a"
+                    : "#f8f8ff",
+              }}
             >
               {title}
             </Text>
-            {subtitle && <Text>{subtitle}</Text>}
+            {subtitle && <Text className="dark:text-light">{subtitle}</Text>}
           </View>
         </View>
-        {isSubmenu && <IconChevronRight />}
+        {selected && (
+          <IconCheck
+            color={color ? color : theme === "light" ? "#0a0a0a" : "#f8f8ff"}
+          />
+        )}
+        {isSubmenu && (
+          <IconChevronRight
+            color={color ? color : theme === "light" ? "#0a0a0a" : "#f8f8ff"}
+          />
+        )}
       </Pressable>
     </Link>
   );

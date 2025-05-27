@@ -2,6 +2,28 @@ import { Link } from "expo-router";
 import { Image, Pressable, Text, View } from "react-native";
 
 export default function Scan() {
+  const theme = useThemeStore((state) => state.resolvedTheme);
+  const setScheduleImage = useScheduleImageStore((state) => state.setImage);
+  const router = useRouter();
+
+  const pickImage = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ["images"],
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
+
+    if (!result.canceled) {
+
+      setScheduleImage({
+        uri: result.assets[0].uri,
+        file: result.assets[0].file || null,
+      });
+      router.push("/scan/schedule");
+    }
+  };
+
   return (
     <View className="flex w-full flex-1 bg-[#F8F8FF] py-[5vh]">
       <View className="mb-auto items-center">

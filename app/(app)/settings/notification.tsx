@@ -22,29 +22,32 @@ export default function SettingsScreen() {
       {/* Opciones de Configuración */}
       <View className="mb-4">
         {/* Opción 1 */}
-        <View className="mb-4 rounded-lg bg-white">
+        <View className="mb-4 rounded-lg bg-white dark:bg-[#212121]">
           <SettingsButton
             icon={IconBellBolt}
             title="Notificaciones automatizadas"
             subtitle="Las notificaciones se basan en la técnica de repetición espaciada"
+            isLast
           />
         </View>
 
         {/* Opción 2 */}
-        <View className="mb-4 rounded-lg bg-white">
+        <View className="mb-4 rounded-lg bg-white dark:bg-[#212121]">
           <SettingsButton
             icon={IconBellCog}
             title="Notificaciones manuales"
             subtitle="Ingresa el intervalo en el que te envieremos las notificaciones"
+            isLast
           />
         </View>
 
         {/* Opción 2 */}
-        <View className="mb-4 rounded-lg bg-white">
+        <View className="mb-4 rounded-lg bg-white dark:bg-[#212121]">
           <SettingsButton
             icon={IconBellX}
             title="Notificaciones desactivadas"
             subtitle="No te enviaremos ninguna notificación"
+            isLast
           />
         </View>
       </View>
