@@ -84,7 +84,7 @@ export default function Home() {
               progress={item.progress}
             />
           )}
-          keyExtractor={(item) => item.name}
+          keyExtractor={(item) => item.subject_id}
           showsVerticalScrollIndicator={false}
         />
       </View>

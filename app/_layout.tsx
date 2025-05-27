@@ -59,10 +59,10 @@ function AuthGate({
 
   useEffect(() => {
     if (fontsLoaded && !authLoading && !scheduleLoading) {
-      if (user && schedule) {
-        router.replace("/home");
-      } else if (user && !schedule) {
+      if (user && !schedule) {
         router.replace("/scan");
+      } else if (user && schedule) {
+        router.replace("/home");
       } else {
         InteractionManager.runAfterInteractions(() => {
           player.play();
