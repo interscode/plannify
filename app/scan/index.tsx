@@ -3,7 +3,9 @@ import { useRef, useState, useEffect } from "react";
 import { Image, Pressable, Text, View, Alert } from "react-native";
 import { CameraView, useCameraPermissions } from "expo-camera";
 import * as ImagePicker from "expo-image-picker";
-
+import { useTranslation } from "react-i18next";
+import React from "react";
+/*Correcion para anita */
 export default function Scan() {
   const [permission, requestCameraPermission] = useCameraPermissions();
   const [isCameraActive, setIsCameraActive] = useState(false);
@@ -12,7 +14,6 @@ export default function Scan() {
   const [selectImagePressed, setSelectImagePressed] = useState(false);
   const [image, setImage] = useState<string | null>(null);
   const { t, i18n } = useTranslation();
-  import { useTranslation } from "react-i18next";
 
   const pickImageFromGallery = async () => {
     setSelectImagePressed(true);
