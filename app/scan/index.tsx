@@ -5,7 +5,7 @@ import { CameraView, useCameraPermissions } from "expo-camera";
 import * as ImagePicker from "expo-image-picker";
 import { useTranslation } from "react-i18next";
 import React from "react";
-/*Correcion para anita */
+
 export default function Scan() {
   const [permission, requestCameraPermission] = useCameraPermissions();
   const [isCameraActive, setIsCameraActive] = useState(false);
