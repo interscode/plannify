@@ -1,6 +1,7 @@
 import ClassesList from "@/features/classes/components/ClassesList";
 import EmptyClassesPlaceHolder from "@/features/classes/components/EmptyClassesPlaceHolder";
 import StandardLink from "@/shared/components/StandardLink";
+import { useTranslation } from "react-i18next";
 import { View } from "react-native";
 
 type ClassItems = {
@@ -15,6 +16,7 @@ type ClassesProps = {
 };
 
 export default function Classes({ ClassData }: ClassesProps) {
+  const { t, i18n } = useTranslation();
   // Este ClassData será eliminado en cuanto se termine el funcionamiento
   ClassData = [
     /*{id: "kji121", subject: "¡Matemáticas hijo!", teacher: "Gilberto", classroom: "V0"}*/
@@ -32,7 +34,7 @@ export default function Classes({ ClassData }: ClassesProps) {
 
       <StandardLink
         href="classes/insert-class/"
-        buttonText="Agregar Materia"
+        buttonText={t("classes.addClassLabel2")}
         opaque={false}
       />
     </View>

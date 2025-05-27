@@ -169,5 +169,10 @@
     "descriptionLabel": "Description",
     "descriptionHint": "Add a description",
     "submitButton": "Ready"
+  },
+  "classes":{
+    "addClassLabel": "Añadir",
+    "addClassLabel2": "Añadir materia"
   }
+
 }
