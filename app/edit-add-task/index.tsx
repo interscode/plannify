@@ -3,7 +3,7 @@ import DescriptionAreaTask from "@/features/edit-add-task/components/Description
 import TitleClassTask from "@/features/edit-add-task/components/TitleClassTask";
 import StandardLink from "@/shared/components/StandardLink";
 import { View } from "react-native";
-import React from "react";
+
 
 export default function EditAddTask() {
   return (
