@@ -1,7 +1,7 @@
 import { Stack } from "expo-router";
 import { useTheme } from "@/shared/hooks/use-theme";
 
-export default function TasksLayout() {
+export default function ScanLayout() {
   const { theme } = useTheme();
 
   return (
