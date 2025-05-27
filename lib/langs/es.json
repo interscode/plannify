@@ -85,7 +85,18 @@
     "scanFailedTitle": "Escaneo fallido",
     "scanFailedPrompt": "¿Ingresar datos manualmente?",
     "manualEntryOption": "Sí, continuar",
-    "retryScanOption": "Volver a intentar"
+    "retryScanOption": "Volver a intentar",
+    "cameraPermissionTitle": "Permiso necesario",
+    "cameraPermissionMessage": "Necesitamos acceso a tu cámara para escanear tu horario.",
+    "cameraPermissionDeny": "Negar",
+    "cameraPermissionAllow": "Dar permiso",
+    "galleryPermissionTitle": "Permiso necesario",
+    "galleryPermissionMessage": "Necesitamos acceso a tu galería para seleccionar una imagen.",
+    "galleryPermissionDeny": "Negar",
+    "galleryPermissionAllow": "Dar permiso",
+    "takePhoto": "Tomar foto",
+    "closeCamera": "Cerrar cámara",
+    "takeAPhoto": "Tomar foto"
   },
 
   "subject": {
