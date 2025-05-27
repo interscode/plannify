@@ -1,5 +1,6 @@
 {
   "home": {
+    "homeTitle": "Home",
     "greeting": "Hello!",
     "allTasksComplete": "You have completed all the tasks of the day!",
     "viewTasksBtn": "See tasks",
@@ -18,15 +19,14 @@
   },
 
   "welcomeScreen": {
-  "appName": "Plannify",
-  "tagline": "Your school ally in the palm of your hand.",
-  "getStartedButton": "Get Started",
-  "alreadyHaveAccount": "Already have an account?",
-  "loginLink": "Log In"
+    "appName": "Plannify",
+    "tagline": "Your school ally in the palm of your hand.",
+    "getStartedButton": "Get Started",
+    "alreadyHaveAccount": "Already have an account?",
+    "loginLink": "Log In"
   },
 
-
- "loginScreen": {
+  "loginScreen": {
     "title": "Log In",
     "subtitle": "Hi! we're glad you're back",
     "loginWithEmail": "Log in with Email",
@@ -38,7 +38,7 @@
     "or": "or",
     "continueWithGoogle": "Continue with Google",
     "noAccountPrompt": "Don't have an account?",
-    "goToRegister": "Home"
+    "goToRegister": "Sign Up"
   },
 
   "registerScreen": {
@@ -135,16 +135,14 @@
     "manualNotificationsDesc": "Enter the desired interval",
     "deactivatedNotificationsLabel": "Deactivated notifications",
     "deactivatedNotificationsDesc": "You will not receive notifications"
-  
   },
   "language": {
     "languageTitle": "Language",
     "languageOptionES": "Spanish",
     "languageOptionEN": "English"
-    
   },
   "theme": {
-    "themeTitle": "Issue",
+    "themeTitle": "Theme",
     "lightTheme": "Light",
     "darkTheme": "Dark",
     "systemTheme": "System"

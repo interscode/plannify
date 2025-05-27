@@ -10,44 +10,42 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 export default function SettingsScreen() {
-  const { t, i18n } = useTranslation();
-  const userImage = require("../../../assets/gatito_persa.png");
+  const { t } = useTranslation();
 
   return (
-    <View className="flex-1">
+    <View className="flex-1" style={{ paddingHorizontal: 25 }}>
       {/* Tarjeta de Usuario */}
-      <UserCard
-        name="Mike Balderas"
-        provider="Google"
-        imageSource={userImage}
-      />
+      <UserCard />
 
       {/* Opciones de Configuración */}
       <View className="mb-4">
         {/* Opción 1 */}
-        <View className="mb-4 rounded-lg bg-white">
+        <View className="mb-4 rounded-lg bg-white dark:bg-[#212121]">
           <SettingsButton
             icon={IconBellBolt}
             title={t("notifications.autoNotificationsLabel")}
             subtitle={t("notifications.autoNotificationsDesc")}
+            isLast
           />
         </View>
 
         {/* Opción 2 */}
-        <View className="mb-4 rounded-lg bg-white">
+        <View className="mb-4 rounded-lg bg-white dark:bg-[#212121]">
           <SettingsButton
             icon={IconBellCog}
             title={t("notifications.manualNotificationsLabel")}
             subtitle={t("notifications.manualNotificationsDesc")}
+            isLast
           />
         </View>
 
         {/* Opción 2 */}
-        <View className="mb-4 rounded-lg bg-white">
+        <View className="mb-4 rounded-lg bg-white dark:bg-[#212121]">
           <SettingsButton
             icon={IconBellX}
             title={t("notifications.deactivatedNotificationsLabel")}
-            subtitle= {t("notifications.deactivatedNotificationsDesc")}
+            subtitle={t("notifications.deactivatedNotificationsDesc")}
+            isLast
           />
         </View>
       </View>

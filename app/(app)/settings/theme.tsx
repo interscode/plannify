@@ -4,30 +4,38 @@ import { SettingsButton } from "@/features/settings/components/settings-button";
 import { IconDevices, IconMoon, IconSun } from "@tabler/icons-react-native";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { useTheme } from "@/shared/hooks/use-theme";
 
 export default function SettingsScreen() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
+  const { currentTheme, setCurrentTheme } = useTheme();
+
   return (
-    <View className="flex-1">
-      <UserCard
-        name="Mike Balderas"
-        provider="Google"
-        imageSource={require("../../../assets/gatito_persa.png")}
-      />
+    <View className="flex-1" style={{ paddingHorizontal: 25 }}>
+      <UserCard />
 
       {/* Opciones de Configuración */}
-      <View className="shadow-xs mb-4 rounded-xl">
-        <View className="mb-4 rounded-lg bg-white">
-          <SettingsButton icon={IconSun} title= {t("theme.lightTheme")} isLast />
-        </View>
+      <View className="mb-4 overflow-hidden rounded-lg bg-white dark:bg-[#212121]">
+        <SettingsButton
+          icon={IconSun}
+          title={t("theme.lightTheme")}
+          selected={currentTheme === "Light"}
+          onPress={() => setCurrentTheme("Light")}
+        />
+        <SettingsButton
+          icon={IconMoon}
+          title={t("theme.darkTheme")}
+          selected={currentTheme === "Dark"}
+          onPress={() => setCurrentTheme("Dark")}
+        />
 
-        <View className="mb-4 rounded-lg bg-white">
-          <SettingsButton icon={IconMoon} title= {t("theme.darkTheme")} isLast />
-        </View>
-
-        <View className="rounded-lg bg-white">
-          <SettingsButton icon={IconDevices} title={t("theme.systemTheme")} isLast />
-        </View>
+        <SettingsButton
+          icon={IconDevices}
+          title={t("theme.systemTheme")}
+          isLast
+          selected={currentTheme === "System"}
+          onPress={() => setCurrentTheme("System")}
+        />
       </View>
     </View>
   );
