@@ -84,7 +84,18 @@
     "scanFailedTitle": "Failed scan",
     "scanFailedPrompt": "Enter data manually?",
     "manualEntryOption": "Yes, continue",
-    "retryScanOption": "Try again"
+    "retryScanOption": "Try again",
+    "cameraPermissionTitle": "Permission needed",
+    "cameraPermissionMessage": "We need access to your camera to scan your schedule.",
+    "cameraPermissionDeny": "Deny",
+    "cameraPermissionAllow": "Allow permission",
+    "galleryPermissionTitle": "Permission needed",
+    "galleryPermissionMessage": "We need access to your gallery to select an image.",
+    "galleryPermissionDeny": "Deny",
+    "galleryPermissionAllow": "Allow permission",
+    "takePhoto": "Taken photo",
+    "closeCamera": "Close Camera",
+    "takeAPhoto": "Take a photo"
   },
   "subject": {
     "subjectTitle": "Subjects",

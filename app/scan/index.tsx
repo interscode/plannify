@@ -4,7 +4,8 @@ import { Pressable, Text, View, Alert } from "react-native";
 import { CameraView, useCameraPermissions } from "expo-camera";
 import * as ImagePicker from "expo-image-picker";
 import { useTranslation } from "react-i18next";
-import Logo from "@/shared/components/logo";
+
+
 
 export default function Scan() {
   const [permission, requestCameraPermission] = useCameraPermissions();
@@ -13,7 +14,8 @@ export default function Scan() {
   const [scanButtonPressed, setScanButtonPressed] = useState(false);
   const [selectImagePressed, setSelectImagePressed] = useState(false);
   const [image, setImage] = useState<string | null>(null);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
 
   const pickImageFromGallery = async () => {
     setSelectImagePressed(true);
@@ -31,18 +33,18 @@ export default function Scan() {
 
       if (!permission.granted) {
         Alert.alert(
-          "Permiso necesario",
-          "Necesitamos permiso para acceder a tu cámara para escanear tu horario.",
+          t("scan.cameraPermissionTitle"),
+          t("scan.cameraPermissionMessage"),
           [
             {
-              text: "Negar",
-              style: "cancel",
+              text: t("scan.cameraPermissionDeny"),
+              style: "cancel", 
               onPress: () => {
                 setScanButtonPressed(false);
               },
             },
             {
-              text: "Dar permiso",
+              text: t("scan.cameraPermissionAllow"),
               onPress: () => {
                 requestCameraPermission();
                 setScanButtonPressed(false);
@@ -64,16 +66,16 @@ export default function Scan() {
           await ImagePicker.requestMediaLibraryPermissionsAsync();
         if (status !== "granted") {
           Alert.alert(
-            "Permiso necesario",
-            "Necesitamos permiso para acceder a tu galería para seleccionar una imagen.",
+            t("scan.galleryPermissionTitle"),
+            t("scan.galleryPermissionMessage"),
             [
               {
-                text: "Negar",
+                text:  t("scan.galleryPermissionDeny"),
                 style: "cancel",
                 onPress: () => setSelectImagePressed(false),
               },
               {
-                text: "Dar permiso",
+                text:  t("scan.galleryPermissionAllow"),
                 onPress: () =>
                   ImagePicker.requestMediaLibraryPermissionsAsync(),
               },
@@ -102,14 +104,14 @@ export default function Scan() {
   const takePicture = async () => {
     if (cameraRef.current) {
       try {
-        const camera = cameraRef.current as CameraView;
-        const photo = await camera.takePictureAsync({
-          shutterSound: false,
-        });
-        console.log("Foto tomada:", photo);
+
+        const camera = cameraRef.current as any;
+        const photo = await camera.takePictureAsync();
+        console.log(t("scan.takePhoto"), photo);
+
         setIsCameraActive(false);
       } catch (error) {
-        console.error("Error al tomar la foto:", error);
+        console.error(t("scan.closeCamera"), error);
       }
     }
   };
@@ -135,7 +137,7 @@ export default function Scan() {
             onPress={takePicture}
           >
             <Text className="text-center text-xl font-semibold text-white">
-              Tomar foto
+              {t("scan.takeAPhoto")}
             </Text>
           </Pressable>
           <Pressable
@@ -143,7 +145,7 @@ export default function Scan() {
             onPress={() => setIsCameraActive(false)}
           >
             <Text className="text-center text-xl font-semibold text-[#000080]">
-              Cerrar Cámara
+              {t("scan.closeCamera")}
             </Text>
           </Pressable>
         </View>
@@ -176,8 +178,10 @@ export default function Scan() {
             {t("scan.scanButton")}
           </Text>
         </Pressable>
-        <Link href="" className="mt-2 text-lg text-[#C0C0C0] underline">
-          Agregar manualmente
+
+        <Link href="" className="mt-4 text-lg text-[#C0C0C0] underline">
+          {t("scan.skip")}
+
         </Link>
       </View>
     </View>
