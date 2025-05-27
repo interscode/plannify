@@ -49,7 +49,7 @@ export default function App() {
         <Text className="font-bold text-primary"> {t("registerScreen.goToLogin")}</Text>
       </Link>
       <Link href="/">Welcome</Link>
-      <Link href="/scan">Scan</Link>
+     <Link href="/scan">Scan</Link>
     </View>
   );
 }
