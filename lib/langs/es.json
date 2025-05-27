@@ -1,6 +1,6 @@
-
 {
   "home": {
+    "homeTitle": "Inicio",
     "greeting": "Hola!",
     "allTasksComplete": "Has completado todas las tareas del día!",
     "viewTasksBtn": "Ver tareas",
@@ -18,11 +18,11 @@
   },
 
   "welcomeScreen": {
-  "appName": "Plannify",
-  "tagline": "Tu aliado escolar en la palma de tu mano.",
-  "getStartedButton": "Comenzar",
-  "alreadyHaveAccount": "¿Ya tienes cuenta?",
-  "loginLink": "Inicia"
+    "appName": "Plannify",
+    "tagline": "Tu aliado escolar en la palma de tu mano.",
+    "getStartedButton": "Comenzar",
+    "alreadyHaveAccount": "¿Ya tienes cuenta?",
+    "loginLink": "Inicia"
   },
 
   "loginScreen": {
@@ -37,10 +37,9 @@
     "or": "o",
     "continueWithGoogle": "Continuar con Google",
     "noAccountPrompt": "¿Aun no tienes cuenta?",
-    "goToRegister": "Home"
+    "goToRegister": "Registrate"
   },
 
-  
   "registerScreen": {
     "title": "Regístrate",
     "subtitle": "Empieza",
@@ -58,7 +57,6 @@
     "goToLogin": "Inicia",
     "welcom": "Welcom"
   },
-
 
   "auth": {
     "loginPrompt": "¿Ya tienes cuenta?",

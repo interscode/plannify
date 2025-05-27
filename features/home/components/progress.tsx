@@ -5,13 +5,12 @@ import { Text, View } from "react-native";
 import Svg, { Circle } from "react-native-svg";
 
 export default function Progress() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
+
   return (
     <View className="h-40 flex-row items-center justify-between rounded-2xl bg-primary px-4 py-6">
       <View className="h-full w-3/5 items-start justify-between">
-        <Text className="tetx-lg text-white">
-          {t("home.allTasksComplete")}
-        </Text>
+        <Text className="tetx-lg text-white">{t("home.allTasksComplete")}</Text>
         <Button
           small
           title="Ver tareas"
@@ -19,11 +18,13 @@ export default function Progress() {
           onPress={() => {}}
           link="/tasks"
         >
-          <Text className="font-bold text-primary">{t("home.viewTasksBtn")}</Text>
+          <Text className="font-bold text-primary">
+            {t("home.viewTasksBtn")}
+          </Text>
         </Button>
       </View>
       <ProgressCircle
-        percentage={80}
+        percentage={100}
         radius={48}
         textClassname="text-light text-3xl font-semibold"
         strokeWidth={7}

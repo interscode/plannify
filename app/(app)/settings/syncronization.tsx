@@ -6,17 +6,12 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 export default function SettingsScreen() {
-  const { t, i18n } = useTranslation();
-  const userImage = require("../../../assets/gatito_persa.png");
+  const { t } = useTranslation();
 
   return (
-    <View className="flex-1">
+    <View className="flex-1" style={{ paddingHorizontal: 25 }}>
       {/* Tarjeta de usuario */}
-      <UserCard
-        name="Mike Balderas"
-        provider="Google"
-        imageSource={userImage}
-      />
+      <UserCard />
 
       {/* Botón de sincronización */}
       <View
@@ -35,25 +30,30 @@ export default function SettingsScreen() {
 
       {/* Sección de dispositivos */}
       <View className="mb-4 mt-4 overflow-hidden rounded-xl">
-        <Text className="text-base font-bold">  {t("sync.devicesTitle")} </Text>
-        <Text className="mb-2 text-base font-normal">
+        <Text className="text-base font-bold dark:text-light">
+          {" "}
+          {t("sync.devicesTitle")}{" "}
+        </Text>
+        <Text className="mb-2 text-base font-normal dark:text-light">
           {t("sync.deviceLogoutHint")}
         </Text>
 
         {/* Lista de dispositivos */}
         <View className="mb-4 mt-2 gap-y-4 overflow-hidden">
-          <View className="rounded-lg bg-white">
+          <View className="rounded-lg bg-white dark:bg-[#212121]">
             <SettingsButton
               icon={IconBrandWindows}
               title="Windows"
               subtitle="Última vez activo 12 de febrero, 5:30 p.m."
+              isLast
             />
           </View>
-          <View className="rounded-lg bg-white">
+          <View className="rounded-lg bg-white dark:bg-[#212121]">
             <SettingsButton
               icon={IconBrandAndroid}
               title="Android"
               subtitle="Última vez activo 12 de febrero, 5:30 p.m."
+              isLast
             />
           </View>
         </View>
