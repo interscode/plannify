@@ -36,12 +36,25 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   },
   plugins: [
     "expo-router",
+    "expo-localization",
     [
       "expo-secure-store",
       {
         configureAndroidBackup: true,
         faceIDPermission:
           "Allow $(PRODUCT_NAME) to access your Face ID biometric data.",
+      },
+    ],
+    [
+      "expo-camera",
+      {
+        cameraPermission: "Allow $(PRODUCT_NAME) to access your camera",
+      },
+    ],
+    [
+      "expo-image-picker",
+      {
+        photosPermission: "Allow $(PRODUCT_NAME) to access your camera",
       },
     ],
   ],
