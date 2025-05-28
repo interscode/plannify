@@ -7,6 +7,7 @@ import { View } from "react-native";
 import { useTasks } from "@/features/tasks/hooks/use-tasks";
 import { useSubjects } from "@/features/schedule/hooks/use-subjects";
 import { IconListCheck } from "@tabler/icons-react-native";
+import React from "react";
 
 export default function Home() {
   const { theme } = useTheme();

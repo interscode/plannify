@@ -116,7 +116,14 @@
     "optLanguage": "Idioma",
     "optTheme": "Tema",
     "optSync": "Sincronización",
-    "optLogout": "Cerrar sesión"
+    "optLogout": "Cerrar sesión",
+    "profileTitle": "Perfil",
+    "notLoggedIn": "No has iniciado sesión",
+    "name": "Nombre",
+    "email": "Email",
+    "currentPassword": "Contraseña actual",
+    "newPassword": "Nueva contraseña",
+    "saveChanges": "Guardar cambios"
   },
 
   "notifications": {

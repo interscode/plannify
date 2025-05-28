@@ -2,7 +2,7 @@ import { Stack } from "expo-router";
 import ThemeProvider, { useTheme } from "@/shared/hooks/use-theme";
 import { useEffect } from "react";
 import { Amplify } from "aws-amplify";
-import awsconfig from "@/aws-exports";
+import awsconfig from "../aws-export";
 import { AuthProvider, useAuth } from "@/shared/hooks/use-auth";
 import {
   Inter_300Light,
@@ -20,6 +20,7 @@ import { InteractionManager } from "react-native";
 import { useSchedule } from "@/features/schedule/hooks/use-schedule";
 import "./global.css";
 import "@/i18n";
+import React from "react";
 
 Amplify.configure(awsconfig);
 SplashScreen.preventAutoHideAsync();

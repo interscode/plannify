@@ -1,15 +1,22 @@
+import UserCardComponent from "@/features/settings/components/user-card";
 import { useAuth } from "@/shared/hooks/use-auth";
+import { View, Text, Image, TouchableOpacity } from "react-native";
+import { useRouter } from "expo-router";
 import React from "react";
-import { View, Text, Image } from "react-native";
 
 export default function UserCard() {
   const { user } = useAuth();
+  const router = useRouter();
 
   return (
-    <View className="mb-4 flex-row items-center rounded-xl bg-white p-4 dark:bg-[#212121]">
-      {user?.picutre ? (
+    <TouchableOpacity
+      onPress={() => router.push("/settings/profile")}
+      activeOpacity={0.8}
+      className="mb-4 flex-row items-center rounded-xl bg-white p-4 dark:bg-[#212121]"
+    >
+      {user?.picture ? (
         <Image
-          source={user.picture}
+          source={{ uri: user.picture }}
           className="mr-4 h-12 w-12 rounded-full"
           resizeMode="cover"
         />
@@ -20,6 +27,7 @@ export default function UserCard() {
           </Text>
         </View>
       )}
+
       <View className="ml-2">
         <Text className="text-base font-semibold text-black dark:text-light">
           {user?.name}
@@ -30,6 +38,6 @@ export default function UserCard() {
             : "Email"}
         </Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }

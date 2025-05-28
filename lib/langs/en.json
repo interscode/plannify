@@ -114,7 +114,15 @@
     "optLanguage": "Language",
     "optTheme": "Theme",
     "optSync": "Synchronization",
-    "optLogout": "Close session"
+    "optLogout": "Close session",
+    "profile": "Profile",
+    "profileTitle": "Profile",
+    "notLoggedIn": "You are not logged in",
+    "name": "Name",
+    "email": "Email",
+    "currentPassword": "Current password",
+    "newPassword": "New password",
+    "saveChanges": "Save changes"
   },
   "notifications": {
     "notificationsTitle": "Notifications",
