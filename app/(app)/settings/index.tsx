@@ -1,5 +1,5 @@
 import { View } from "react-native";
-import UserCard from "@/features/settings/components/user-card";
+import UserCard from "./userSettings";
 import {
   IconBell,
   IconLanguage,

@@ -20,6 +20,7 @@ export function useSchedule() {
       }
       console.log(schedule);
     } catch (err) {
+      console.log(err)
       setError("Error al obtener el horario. Por favor, inténtalo de nuevo.");
       console.log("Error horario");
     } finally {

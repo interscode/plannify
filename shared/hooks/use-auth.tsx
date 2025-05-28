@@ -8,6 +8,7 @@ import {
   signInWithRedirect,
 } from "aws-amplify/auth";
 import { Hub } from "aws-amplify/utils";
+import React from "react";
 import { useRouter } from "expo-router";
 
 type UserInfo = {
@@ -22,13 +23,10 @@ type AuthContextType = {
   actionLoading?: boolean;
   signOutUser: () => Promise<void>;
   signInWithEmail: (email: string, password: string) => Promise<void>;
-  signUpWithEmail: (
-    name: string,
-    email: string,
-    password: string,
-  ) => Promise<void>;
+  signUpWithEmail: (name: string, email: string, password: string) => Promise<void>;
   confirmSignUpWithEmail: (email: string, code: string) => Promise<void>;
   signInWithGoogle: () => Promise<void>;
+  loadUser: () => Promise<void>; // ✅ agregado
 };
 
 const AuthContext = createContext<AuthContextType>({
@@ -40,6 +38,7 @@ const AuthContext = createContext<AuthContextType>({
   signUpWithEmail: async () => {},
   confirmSignUpWithEmail: async () => {},
   signInWithGoogle: async () => {},
+  loadUser: async () => {}, // ✅ agregado
 });
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
@@ -70,15 +69,10 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   const signInWithEmail = async (email: string, password: string) => {
-    if (!email || !password) {
-      throw new Error("Email and password are required.");
-    }
+    if (!email || !password) throw new Error("Email and password are required.");
     setActionLoading(true);
     try {
-      const { nextStep, isSignedIn } = await signIn({
-        username: email,
-        password,
-      });
+      const { nextStep, isSignedIn } = await signIn({ username: email, password });
       if (isSignedIn) {
         await loadUser();
         router.push("/auth/callback");
@@ -94,15 +88,10 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   const confirmSignUpWithEmail = async (email: string, code: string) => {
-    if (!email || !code) {
-      throw new Error("Email and confirmation code are required.");
-    }
+    if (!email || !code) throw new Error("Email and confirmation code are required.");
     setActionLoading(true);
     try {
-      const { isSignUpComplete } = await confirmSignUp({
-        username: email,
-        confirmationCode: code,
-      });
+      const { isSignUpComplete } = await confirmSignUp({ username: email, confirmationCode: code });
       if (isSignUpComplete) {
         await loadUser();
         router.push("/auth/callback");
@@ -119,9 +108,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     try {
       await signInWithRedirect({
         provider: "Google",
-        options: {
-          lang: "es",
-        },
+        options: { lang: "es" },
       });
     } catch (error) {
       console.error("Error signing in with Google:", error);
@@ -129,14 +116,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     }
   };
 
-  const signUpWithEmail = async (
-    name: string,
-    email: string,
-    password: string,
-  ) => {
-    if (!name || !email || !password) {
-      throw new Error("Name, email, and password are required.");
-    }
+  const signUpWithEmail = async (name: string, email: string, password: string) => {
+    if (!name || !email || !password) throw new Error("Name, email, and password are required.");
     setActionLoading(true);
     try {
       const { nextStep } = await signUp({
@@ -145,7 +126,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         options: {
           userAttributes: {
             email,
-            name: name,
+            name,
           },
         },
       });
@@ -156,7 +137,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         router.push("/auth/callback");
       }
     } catch (error) {
-      console.error("Error signing in with email:", error);
+      console.error("Error signing up:", error);
       throw new Error("Failed to sign up with email.");
     } finally {
       setActionLoading(false);
@@ -191,6 +172,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         signUpWithEmail,
         confirmSignUpWithEmail,
         signInWithGoogle,
+        loadUser, // ✅ aquí también
       }}
     >
       {children}
@@ -198,4 +180,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export const useAuth = () => useContext(AuthContext);
+export const useAuth = () => {
+  const context = useContext(AuthContext);
+  return { ...context };
+};

@@ -1,5 +1,6 @@
 import { Stack } from "expo-router";
 import { useTheme } from "@/shared/hooks/use-theme";
+import React from "react";
 
 export default function TasksLayout() {
   const { theme } = useTheme();

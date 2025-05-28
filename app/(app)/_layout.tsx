@@ -9,6 +9,7 @@ import {
 import { Tabs } from "expo-router";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "@/shared/hooks/use-theme";
+import React from "react";
 
 export default function AppLayout() {
   const { t } = useTranslation();

@@ -4,6 +4,7 @@ import { useTheme } from "@/shared/hooks/use-theme";
 import { ActivityIndicator } from "react-native";
 import { useSchedule } from "@/features/schedule/hooks/use-schedule";
 import { Redirect } from "expo-router";
+import React from "react";
 
 export default function Callback() {
   const { theme } = useTheme();

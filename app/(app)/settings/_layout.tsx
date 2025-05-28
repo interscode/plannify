@@ -2,6 +2,7 @@ import { useTheme } from "@/shared/hooks/use-theme";
 import { Stack } from "expo-router";
 import { useTranslation } from "react-i18next";
 import Header from "@/features/settings/components/header";
+import React from "react";
 
 export default function SettingsLayout() {
   const { theme } = useTheme();
