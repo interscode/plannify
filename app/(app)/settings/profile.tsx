@@ -14,7 +14,7 @@ export default function ProfileSettingsScreen() {
         {t("settings.profile")}
       </Text>
 
-      {!user && <EditProfileForm />}
+      {user && <EditProfileForm />}
 
       {!user && (
         <View className="h-96 items-center justify-center">
