@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const API_BASE_URL = "http://148.220.214.38:3000";
+export const API_BASE_URL = "https://ewpxcpashqgo3plw6qq7ziezei0wsuon.lambda-url.us-east-1.on.aws/https://ewpxcpashqgo3plw6qq7ziezei0wsuon.lambda-url.us-east-1.on.aws";
 
 export const api = axios.create({
   baseURL: API_BASE_URL,

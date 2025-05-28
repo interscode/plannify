@@ -105,6 +105,7 @@ export default function Signin() {
       </Link>
       <Link href="/home">Home</Link>
       <Link href="/scan">Scan</Link>
+      <Link href="/edit-add-task">Scanned Schedule</Link>
     </View>
   );
 }
