@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { api } from "@/shared/services/api";
-import { Shedule } from "@/shared/services/types";
+import { Schedule } from "@/shared/services/types";
 import { useAuth } from "@/shared/hooks/use-auth";
 
 export function useSchedule() {
-  const [schedule, setSchedule] = useState<Shedule | null>(null);
+  const [schedule, setSchedule] = useState<Schedule | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const { user } = useAuth();

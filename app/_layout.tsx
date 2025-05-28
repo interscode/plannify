@@ -15,11 +15,20 @@ import {
 import * as SplashScreen from "expo-splash-screen";
 import { useRouter } from "expo-router";
 import { useAudioPlayer } from "expo-audio";
-import { View } from "react-native";
-import { InteractionManager } from "react-native";
-import { useSchedule } from "@/features/schedule/hooks/use-schedule";
+import { View, InteractionManager } from "react-native";
 import "./global.css";
 import "@/i18n";
+
+import {
+  setupNotificationHandler,
+  registerForPushNotificationsAsync,
+  cancelAllNotifications,
+  scheduleClassNotification,
+  scheduleTaskNotification,
+} from "@/shared/services/notifications";
+
+import { useSubjects } from "@/features/schedule/hooks/use-subjects";
+import { useTasks } from "@/features/tasks/hooks/use-tasks";
 
 Amplify.configure(awsconfig);
 SplashScreen.preventAutoHideAsync();
@@ -52,16 +61,32 @@ function AuthGate({
   fontsLoaded: boolean;
 }) {
   const { loading: authLoading, user } = useAuth();
+  const { subjects, loading: subjectsLoading } = useSubjects();
+  const { tasks, loading: tasksLoading } = useTasks();
   const router = useRouter();
   const audioStartup = require("@/assets/plannify-audio.mp3");
   const player = useAudioPlayer(audioStartup);
-  const { schedule, loading: scheduleLoading } = useSchedule();
 
   useEffect(() => {
-    if (fontsLoaded && !authLoading && !scheduleLoading) {
-      if (user && !schedule) {
-        router.replace("/scan");
-      } else if (user && schedule) {
+    const initNotifications = async () => {
+      await setupNotificationHandler();
+      await registerForPushNotificationsAsync();
+      await cancelAllNotifications();
+
+      for (const subject of subjects) {
+        await scheduleClassNotification(subject);
+      }
+
+      for (const task of tasks) {
+        await scheduleTaskNotification(task);
+      }
+    };
+
+    if (fontsLoaded && !authLoading && !subjectsLoading && !tasksLoading) {
+      if (user && subjects.length === 0) {
+        router.replace("/scan"); 
+      } else if (user) {
+        initNotifications();
         router.replace("/home");
       } else {
         InteractionManager.runAfterInteractions(() => {
@@ -71,14 +96,20 @@ function AuthGate({
 
       SplashScreen.hideAsync();
     }
-  }, [fontsLoaded, authLoading, user]);
-
-  if (!fontsLoaded || authLoading) return <View />;
+  }, [
+    fontsLoaded,
+    authLoading,
+    subjectsLoading,
+    tasksLoading,
+    subjects,
+    tasks,
+    user,
+  ]);
 
   return <>{children}</>;
 }
 
-export function StackLayout() {
+function StackLayout() {
   const { theme } = useTheme();
 
   return (
