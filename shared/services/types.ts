@@ -1,5 +1,5 @@
-export type Shedule = {
-  shedule_id: string;
+export type Schedule = {
+  schedule_id: string;
   start_time: string;
   end_time: string;
   subjects_ids: string[];
